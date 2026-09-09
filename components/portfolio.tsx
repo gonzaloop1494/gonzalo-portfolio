@@ -191,16 +191,15 @@ export function Portfolio() {
       <section className="hero" id="inicio">
         <div className="hero-grid">
           <div className="hero-copy reveal is-visible">
-            <p className="eyebrow"><span /> Ingeniería de Telecomunicaciones</p>
-            <h1>
-              Entender la red.
-              <br />
-              <em>Construir lo que viene.</em>
+            <h1 className="hero-name" aria-label="Gonzalo Pacheco Agredano">
+              <span>GONZALO</span>
+              <span>PACHECO</span>
+              <span>AGREDANO</span>
             </h1>
             <p className="hero-intro">
-              Soy Gonzalo Pacheco, estudiante de último curso de Ingeniería en Sistemas de
-              Telecomunicación. Me interesan las redes móviles, los sistemas satelitales y el
-              análisis de rendimiento basado en datos.
+              Soy estudiante de último curso de Ingeniería en Sistemas de Telecomunicación. Me
+              interesan las redes móviles, los sistemas satelitales y el análisis de rendimiento
+              basado en datos.
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href="#proyectos">
@@ -223,11 +222,14 @@ export function Portfolio() {
                 sizes="(max-width: 880px) 68vw, 280px"
                 priority
               />
-              <p>Gonzalo Pacheco<br />Agredano</p>
             </div>
             <div className="hero-meta">
               <p><MapPin size={16} /> Leganés, Madrid</p>
-              <p><CircleCheck size={16} /> Disponible para prácticas curriculares</p>
+              <p className="hero-ntt">
+                <CircleCheck size={16} />
+                <span>Prácticas curriculares en</span>
+                <Image className="ntt-logo" src="/ntt-data-logo.svg" alt="NTT DATA" width={510} height={83} />
+              </p>
             </div>
           </div>
         </div>

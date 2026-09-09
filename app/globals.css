@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Allura";
+  src: url("/allura.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 400;
+}
+
 :root {
   --navy-950: #061525;
   --navy-900: #081d33;
@@ -99,7 +106,17 @@ button { color: inherit; }
 .eyebrow span { display: inline-block; width: 1.75rem; height: 2px; background: var(--accent); }
 h1, h2, h3, p { margin-top: 0; }
 h1, h2, h3 { letter-spacing: 0; }
-.hero h1 { max-width: 760px; margin-bottom: 1.45rem; font-size: clamp(3.35rem, 6.4vw, 6.5rem); line-height: .96; font-weight: 800; }
+.hero-name {
+  max-width: 760px;
+  margin-bottom: 1.7rem;
+  color: var(--accent);
+  font-family: "Allura", "Snell Roundhand", "Segoe Script", cursive;
+  font-size: clamp(5.2rem, 8.2vw, 8.75rem);
+  font-weight: 400;
+  letter-spacing: .025em;
+  line-height: .7;
+}
+.hero-name span { display: block; }
 h1 em, h2 em, .display-copy em { color: var(--accent); font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
 .hero-intro { max-width: 610px; margin-bottom: 2rem; color: var(--muted); font-size: clamp(1rem, 1.3vw, 1.15rem); line-height: 1.65; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
@@ -113,10 +130,11 @@ h1 em, h2 em, .display-copy em { color: var(--accent); font-family: Georgia, "Ti
 .hero-portrait-wrap { padding: .8rem; background: var(--navy-800); border: 1px solid var(--line); }
 .hero-line { display: none; }
 .hero-portrait { display: block; width: 100%; height: auto; filter: saturate(.92); }
-.hero-portrait-wrap p { margin: .8rem 0 0; color: var(--text); font-size: .72rem; font-weight: 800; line-height: 1.25; text-transform: uppercase; }
 .hero-meta { display: flex; flex-direction: column; gap: .55rem; padding-top: 1rem; color: var(--muted); font-size: .78rem; font-weight: 700; }
 .hero-meta p { display: flex; align-items: center; gap: .4rem; margin: 0; }
 .hero-meta svg { color: var(--accent); }
+.hero-meta .hero-ntt { flex-wrap: wrap; gap: .45rem; }
+.ntt-logo { width: 72px; height: auto; padding: .18rem .28rem; background: var(--white); }
 .scroll-cue { position: absolute; z-index: 4; right: clamp(1.3rem, 4vw, 5rem); bottom: 1.65rem; display: flex; align-items: center; gap: .4rem; color: var(--muted); font-size: .7rem; font-weight: 800; text-transform: uppercase; }
 .scroll-cue:hover { color: var(--accent); }
 .scroll-cue svg { animation: bob 1.4s ease-in-out infinite; }
@@ -260,7 +278,7 @@ h1 em, h2 em, .display-copy em { color: var(--accent); font-family: Georgia, "Ti
 }
 
 @media (max-width: 580px) {
-  .hero h1 { font-size: clamp(3rem, 14vw, 4.25rem); }
+  .hero-name { margin-bottom: 1.35rem; font-size: clamp(3.2rem, 13.5vw, 4.2rem); line-height: .76; }
   .scroll-cue { display: none; }
   .section-heading h2, .skills-heading h2, .credentials-intro h2 { font-size: clamp(2.15rem, 11vw, 3.2rem); }
   .filter-bar { margin-top: 2rem; }

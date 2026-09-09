@@ -164,8 +164,9 @@ export function Portfolio() {
       <div className="progress" aria-hidden="true" style={{ transform: `scaleX(${progress / 100})` }} />
 
       <header className="site-header">
-        <a className="wordmark" href="#inicio" onClick={closeMenu} aria-label="Ir al inicio">
-          GP<span>.</span>
+        <a className="brand-lockup" href="#inicio" onClick={closeMenu} aria-label="Ir al inicio de Gonzalo Pacheco Agredano">
+          <span className="wordmark" aria-hidden="true">GP<span>.</span></span>
+          <span className="header-signature" aria-hidden="true">GONZALO PACHECO AGREDANO</span>
         </a>
         <button
           className="menu-button"
@@ -191,11 +192,7 @@ export function Portfolio() {
       <section className="hero" id="inicio">
         <div className="hero-grid">
           <div className="hero-copy reveal is-visible">
-            <h1 className="hero-name" aria-label="Gonzalo Pacheco Agredano">
-              <span>GONZALO</span>
-              <span>PACHECO</span>
-              <span>AGREDANO</span>
-            </h1>
+            <h1 className="visually-hidden">Gonzalo Pacheco Agredano</h1>
             <p className="hero-intro">
               Soy estudiante de último curso de Ingeniería en Sistemas de Telecomunicación. Me
               interesan las redes móviles, los sistemas satelitales y el análisis de rendimiento

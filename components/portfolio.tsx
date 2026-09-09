@@ -194,9 +194,9 @@ export function Portfolio() {
           <div className="hero-copy reveal is-visible">
             <h1 className="visually-hidden">Gonzalo Pacheco Agredano</h1>
             <p className="hero-intro">
-              Soy estudiante de último curso de Ingeniería en Sistemas de Telecomunicación. Me
-              interesan las redes móviles, los sistemas satelitales y el análisis de rendimiento
-              basado en datos.
+              Estudiante de último curso de Ingeniería en Sistemas de Telecomunicación y
+              actualmente en prácticas curriculares en NTT DATA. Me interesan las redes móviles,
+              los sistemas satelitales y el análisis de rendimiento basado en datos.
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href="#proyectos">

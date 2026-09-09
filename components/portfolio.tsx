@@ -402,15 +402,39 @@ export function Portfolio() {
           <div className="credentials-list">
             <article className="credential reveal">
               <Languages size={23} strokeWidth={1.5} />
-              <div><p>Idiomas</p><h3>Inglés C1</h3><span>Uso fluido y profesional</span></div>
+              <div>
+                <p>Idiomas</p>
+                <div className="credential-items">
+                  <div className="credential-item">
+                    <h3>Inglés C1</h3>
+                    <a className="certificate-link" href="/english-c1-certificate.pdf" target="_blank" rel="noreferrer" aria-label="Ver título de inglés C1">
+                      Ver título <ExternalLink size={14} />
+                    </a>
+                  </div>
+                  <div className="credential-item"><h3>Francés básico profesional</h3></div>
+                  <div className="credential-item"><h3>Español nativo</h3></div>
+                </div>
+              </div>
             </article>
             <article className="credential reveal">
-              <Languages size={23} strokeWidth={1.5} />
-              <div><p>Idiomas</p><h3>Español nativo</h3><span>Francés básico profesional</span></div>
+              <Code2 size={23} strokeWidth={1.5} />
+              <div>
+                <p>MATLAB Academy</p>
+                <h3>MATLAB Onramp</h3>
+                <span>Formación completada al 100%.</span>
+                <div className="certificate-actions">
+                  <a className="certificate-link" href="/matlab-onramp-certificate.pdf" target="_blank" rel="noreferrer" aria-label="Ver título de MATLAB Onramp">
+                    Ver título <ExternalLink size={14} />
+                  </a>
+                  <a className="certificate-link" href="/matlab-onramp-progress.pdf" target="_blank" rel="noreferrer" aria-label="Ver progreso de MATLAB Onramp">
+                    Ver progreso <ExternalLink size={14} />
+                  </a>
+                </div>
+              </div>
             </article>
             <article className="credential reveal">
               <CircleCheck size={23} strokeWidth={1.5} />
-              <div><p>Certificaciones técnicas</p><h3>En actualización</h3><span>Espacio listo para incorporar nuevas acreditaciones verificables.</span></div>
+              <div><p>Certificaciones técnicas</p><h3>En proceso</h3></div>
             </article>
           </div>
         </section>

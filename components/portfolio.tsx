@@ -266,12 +266,6 @@ export function Portfolio() {
         <section className="section intro-section" id="perfil">
           <div className="section-marker reveal"><span>01</span> Perfil</div>
           <div className="profile-layout">
-            <div className="profile-statement reveal">
-              <p className="display-copy">
-                Un perfil que combina el rigor de las <em>telecomunicaciones</em> con la
-                curiosidad de construir software útil.
-              </p>
-            </div>
             <div className="profile-detail reveal">
               <p className="profile-intro">
                 Estudiante de último curso de Ingeniería en Sistemas de Telecomunicación y

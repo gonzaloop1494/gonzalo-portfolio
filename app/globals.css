@@ -148,7 +148,7 @@ h1, h2, h3 { letter-spacing: 0; }
   white-space: nowrap;
   border: 0;
 }
-h1 em, h2 em, .display-copy em { color: var(--accent); font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
+h1 em, h2 em { color: var(--accent); font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
 .hero-title { max-width: 670px; margin: 0 0 .7rem; color: var(--text); font-size: clamp(2.75rem, 5.1vw, 5rem); font-weight: 900; line-height: 1; }
 .hero-role { margin: 0 0 2rem; color: var(--soft); font-size: clamp(.9rem, 1.4vw, 1.15rem); font-weight: 700; line-height: 1.5; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
@@ -175,11 +175,10 @@ h1 em, h2 em, .display-copy em { color: var(--accent); font-family: Georgia, "Ti
 .section { max-width: 1440px; margin: 0 auto; padding: clamp(5rem, 11vw, 9rem) clamp(1.3rem, 6vw, 6rem); }
 .section-marker { display: flex; align-items: center; gap: .7rem; color: var(--muted); font-size: .75rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .section-marker span { color: var(--accent); font-variant-numeric: tabular-nums; }
-.profile-layout { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr); gap: clamp(2.25rem, 8vw, 9rem); align-items: end; padding-top: clamp(2.5rem, 7vw, 5.5rem); }
-.display-copy { margin: 0; font-size: clamp(2.1rem, 4.4vw, 4.7rem); font-weight: 750; line-height: 1.08; }
-.profile-detail { max-width: 420px; padding-bottom: .5rem; }
-.profile-detail p { color: var(--muted); line-height: 1.7; }
-.profile-detail .profile-intro { color: var(--soft); font-weight: 700; }
+.profile-layout { padding-top: clamp(2.5rem, 7vw, 5.5rem); }
+.profile-detail { max-width: 740px; padding-bottom: .5rem; margin: 0 auto; text-align: center; }
+.profile-detail p { margin-right: auto; margin-left: auto; color: var(--muted); font-size: clamp(1rem, 1.35vw, 1.14rem); line-height: 1.75; }
+.profile-detail .profile-intro { max-width: 700px; color: var(--soft); font-weight: 700; }
 .text-link { display: inline-flex; align-items: center; gap: .35rem; margin-top: .75rem; border-bottom: 1px solid var(--accent); color: var(--accent); font-size: .85rem; font-weight: 800; }
 .text-link:hover { color: var(--accent-strong); border-color: var(--accent-strong); }
 
@@ -309,8 +308,7 @@ h1 em, h2 em, .display-copy em { color: var(--accent); font-family: Georgia, "Ti
   .hero { min-height: auto; }
   .hero-grid { grid-template-columns: 1fr; min-height: auto; padding-top: 7.5rem; padding-bottom: 5.5rem; }
   .hero-aside { width: min(100%, 390px); justify-self: start; }
-  .profile-layout, .skills-layout, .credentials-section, .contact-layout { grid-template-columns: 1fr; }
-  .profile-detail { max-width: 600px; }
+  .skills-layout, .credentials-section, .contact-layout { grid-template-columns: 1fr; }
   .data-grid { grid-template-columns: 1fr; }
   .data-item, .data-item + .data-item { min-height: unset; padding: 1.55rem 0; border-left: 0; }
   .data-label { margin-top: 1.5rem; }

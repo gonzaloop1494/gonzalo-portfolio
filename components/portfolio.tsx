@@ -14,6 +14,7 @@ import {
   GitFork,
   GraduationCap,
   Languages,
+  Linkedin,
   Mail,
   MapPin,
   Menu,
@@ -28,6 +29,7 @@ import { NetworkMotion } from "./network-motion";
 
 const email = "gonzalo.pachecoagredano@gmail.com";
 const github = "https://github.com/gonzaloop1494";
+const linkedin = "https://www.linkedin.com/in/gonzalo-pacheco-agredano-5a9b482b7/";
 const cvFile = "/cv-gonzalo-pacheco-agredano.pdf";
 
 const navigation = [
@@ -497,6 +499,7 @@ export function Portfolio() {
               <div className="social-links">
                 <a href={`mailto:${email}`}><Mail size={18} /> {email}</a>
                 <a href={github} target="_blank" rel="noreferrer"><GitFork size={18} /> GitHub</a>
+                <a href={linkedin} target="_blank" rel="noreferrer"><Linkedin size={17} strokeWidth={1.8} /> LinkedIn</a>
               </div>
             </div>
             <div className="contact-card reveal">

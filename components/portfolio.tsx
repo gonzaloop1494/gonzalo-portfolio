@@ -412,12 +412,21 @@ export function Portfolio() {
                 Ver apuntes en Wuolah <ExternalLink size={15} />
               </a>
             </article>
-            <article className="timeline-card reveal">
-              <div className="timeline-heading"><BrainCircuit size={25} strokeWidth={1.5} /><span>TFG</span></div>
-              <p className="timeline-date">En fase de definición</p>
-              <h3>Trabajo Fin de Grado</h3>
-              <p>El espacio recogerá el problema, la metodología y las conclusiones del proyecto final cuando el tema quede asignado.</p>
-              <p className="timeline-note">Una sección preparada para mostrar el desarrollo con contexto técnico.</p>
+            <article className="timeline-card timeline-card-tfg reveal">
+              <Image
+                className="tfg-background"
+                src="/tfg-6g-ris.png"
+                alt="Ilustración conceptual de una red 6G con superficies inteligentes reconfigurables"
+                fill
+                sizes="(max-width: 880px) 88vw, 30vw"
+              />
+              <div className="tfg-card-content">
+                <div className="timeline-heading"><BrainCircuit size={25} strokeWidth={1.5} /><span>TFG</span></div>
+                <p className="timeline-date">En fase de definición</p>
+                <h3>Trabajo Fin de Grado</h3>
+                <p>El espacio recogerá el problema, la metodología y las conclusiones del proyecto final cuando el tema quede asignado.</p>
+                <p className="timeline-note">Una sección preparada para mostrar el desarrollo con contexto técnico.</p>
+              </div>
             </article>
             <article className="timeline-card reveal">
               <div className="timeline-heading"><BriefcaseBusiness size={25} strokeWidth={1.5} /><span>Candidatura</span></div>

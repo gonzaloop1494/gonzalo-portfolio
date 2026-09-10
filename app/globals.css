@@ -175,21 +175,20 @@ h1 em, h2 em { color: var(--accent); font-family: Georgia, "Times New Roman", se
 .section { max-width: 1440px; margin: 0 auto; padding: clamp(5rem, 11vw, 9rem) clamp(1.3rem, 6vw, 6rem); }
 .section-marker { display: flex; align-items: center; gap: .7rem; color: var(--muted); font-size: .75rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .section-marker span { color: var(--accent); font-variant-numeric: tabular-nums; }
-.profile-layout { padding-top: clamp(2.5rem, 7vw, 5.5rem); }
-.profile-detail { max-width: 740px; padding-bottom: .5rem; margin: 0 auto; text-align: center; }
-.profile-detail p { margin-right: auto; margin-left: auto; color: var(--muted); font-size: clamp(1rem, 1.35vw, 1.14rem); line-height: 1.75; }
+.profile-layout { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(280px, .7fr); gap: clamp(2.5rem, 8vw, 8rem); align-items: center; padding-top: clamp(2.5rem, 7vw, 5.5rem); }
+.profile-detail { max-width: 740px; padding-bottom: .5rem; }
+.profile-detail p { color: var(--muted); font-size: clamp(1rem, 1.35vw, 1.14rem); line-height: 1.75; }
 .profile-detail .profile-intro { max-width: 700px; color: var(--soft); font-weight: 700; }
 .text-link { display: inline-flex; align-items: center; gap: .35rem; margin-top: .75rem; border-bottom: 1px solid var(--accent); color: var(--accent); font-size: .85rem; font-weight: 800; }
 .text-link:hover { color: var(--accent-strong); border-color: var(--accent-strong); }
-
-.data-section { padding-top: 1rem; }
-.data-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 2rem; border-top: 1px solid var(--line); }
-.data-item { min-height: 250px; padding: 2rem 1.8rem 1.5rem 0; border-bottom: 1px solid var(--line); }
-.data-item + .data-item { padding-left: 1.8rem; border-left: 1px solid var(--line); }
-.data-item svg { color: var(--accent); }
-.data-label { margin: 2.35rem 0 .45rem; color: var(--muted); font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-.data-item h2 { margin-bottom: .55rem; font-size: clamp(1.3rem, 2vw, 1.8rem); }
-.data-item p:last-child { max-width: 310px; margin-bottom: 0; color: var(--muted); font-size: .9rem; }
+.profile-data-card { width: 100%; padding: 1.35rem 1.45rem; border: 1px solid var(--line); background: var(--navy-800); }
+.profile-data-heading { margin: 0; color: var(--accent); font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.profile-data-list { margin: 1rem 0 0; }
+.profile-data-list > div { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: .75rem; padding: 1rem 0; border-top: 1px solid var(--line); }
+.profile-data-list > div:first-child { padding-top: 0; border-top: 0; }
+.profile-data-list svg { margin-top: .15rem; color: var(--accent); }
+.profile-data-list dt { color: var(--muted); font-size: .67rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.profile-data-list dd { margin: .32rem 0 0; color: var(--soft); font-size: .95rem; font-weight: 800; line-height: 1.35; }
 
 .projects-section { max-width: none; padding-left: max(1.3rem, calc((100vw - 1440px) / 2 + 6vw)); padding-right: max(1.3rem, calc((100vw - 1440px) / 2 + 6vw)); background: var(--navy-800); }
 .section-heading { max-width: 760px; }
@@ -319,11 +318,10 @@ h1 em, h2 em { color: var(--accent); font-family: Georgia, "Times New Roman", se
   .hero { min-height: auto; }
   .hero-grid { grid-template-columns: 1fr; min-height: auto; padding-top: 7.5rem; padding-bottom: 5.5rem; }
   .hero-aside { width: min(100%, 390px); justify-self: start; }
-  .skills-layout, .contact-layout { grid-template-columns: 1fr; }
+  .profile-layout, .skills-layout, .contact-layout { grid-template-columns: 1fr; }
+  .profile-detail { max-width: 740px; margin: 0 auto; text-align: center; }
+  .profile-data-card { max-width: 560px; margin: 0 auto; }
   .credentials-grid { grid-template-columns: 1fr; }
-  .data-grid { grid-template-columns: 1fr; }
-  .data-item, .data-item + .data-item { min-height: unset; padding: 1.55rem 0; border-left: 0; }
-  .data-label { margin-top: 1.5rem; }
   .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .trajectory-grid { grid-template-columns: 1fr; }
   .cv-panel { align-items: flex-start; flex-direction: column; min-height: unset; }

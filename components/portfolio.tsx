@@ -231,9 +231,6 @@ export function Portfolio() {
               <a className="button button-primary" href="#proyectos">
                 Ver proyectos <ArrowDownRight size={18} />
               </a>
-              <a className="button button-secondary" href={cvFile} target="_blank" rel="noreferrer">
-                Abrir CV <ExternalLink size={17} />
-              </a>
             </div>
           </div>
           <div className="hero-aside reveal is-visible">
@@ -283,36 +280,38 @@ export function Portfolio() {
                 Consultar CV detallado <ArrowUpRight size={17} />
               </a>
             </div>
-          </div>
-        </section>
-
-        <section className="section data-section">
-          <div className="section-marker reveal"><span>02</span> Datos</div>
-          <div className="data-grid">
-            <article className="data-item reveal">
-              <MapPin size={25} strokeWidth={1.6} />
-              <p className="data-label">Ubicación</p>
-              <h2>Leganés, Madrid</h2>
-              <p>Con disponibilidad para desplazarme.</p>
-            </article>
-            <article className="data-item reveal">
-              <Network size={25} strokeWidth={1.6} />
-              <p className="data-label">Perfil</p>
-              <h2>Redes + datos</h2>
-              <p>RAN/Core, rendimiento, automatización y machine learning aplicado.</p>
-            </article>
-            <article className="data-item reveal">
-              <Radio size={25} strokeWidth={1.6} />
-              <p className="data-label">Intereses</p>
-              <h2>5G, satélite y espacio</h2>
-              <p>Network slicing, GEO/LEO, CubeSats, edge computing y calidad de servicio.</p>
-            </article>
+            <aside className="profile-data-card reveal" aria-label="Datos de perfil">
+              <p className="profile-data-heading">Datos</p>
+              <dl className="profile-data-list">
+                <div>
+                  <MapPin size={20} strokeWidth={1.6} />
+                  <div>
+                    <dt>Ubicación</dt>
+                    <dd>Leganés, Madrid</dd>
+                  </div>
+                </div>
+                <div>
+                  <Network size={20} strokeWidth={1.6} />
+                  <div>
+                    <dt>Perfil</dt>
+                    <dd>Redes + datos</dd>
+                  </div>
+                </div>
+                <div>
+                  <Radio size={20} strokeWidth={1.6} />
+                  <div>
+                    <dt>Intereses</dt>
+                    <dd>5G, satélite y espacio</dd>
+                  </div>
+                </div>
+              </dl>
+            </aside>
           </div>
         </section>
 
         <section className="section projects-section" id="proyectos">
           <div className="section-heading reveal">
-            <div className="section-marker"><span>03</span> Proyectos</div>
+            <div className="section-marker"><span>02</span> Proyectos</div>
             <h2>Lo técnico tiene mejor historia cuando se puede <em>mostrar.</em></h2>
           </div>
           <div className="filter-bar reveal" aria-label="Filtrar proyectos">
@@ -357,7 +356,7 @@ export function Portfolio() {
         <section className="section skills-section">
           <div className="skills-layout">
             <div className="skills-heading reveal">
-              <div className="section-marker"><span>04</span> Habilidades</div>
+              <div className="section-marker"><span>03</span> Habilidades</div>
               <h2>Herramientas para <em>analizar, medir y construir.</em></h2>
             </div>
             <div className="skill-groups">
@@ -394,7 +393,7 @@ export function Portfolio() {
 
         <section className="section trajectory-section" id="trayectoria">
           <div className="section-heading reveal">
-            <div className="section-marker"><span>05</span> Trayectoria</div>
+            <div className="section-marker"><span>04</span> Trayectoria</div>
             <h2>Formación aplicada, con la vista puesta en el <em>siguiente desafío.</em></h2>
           </div>
           <div className="trajectory-grid">
@@ -441,7 +440,7 @@ export function Portfolio() {
         </section>
 
         <section className="section credentials-section">
-          <div className="section-marker reveal"><span>06</span> Certificaciones</div>
+          <div className="section-marker reveal"><span>05</span> Certificaciones</div>
           <div className="credentials-grid">
             <article className="credential-card reveal">
               <div className="credential-card-heading">

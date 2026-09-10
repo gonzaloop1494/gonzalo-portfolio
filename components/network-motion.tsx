@@ -11,7 +11,7 @@ type Node = {
 };
 
 function createNodes(width: number, height: number) {
-  const count = Math.max(34, Math.min(72, Math.round((width * height) / 19000)));
+  const count = Math.max(24, Math.min(46, Math.round((width * height) / 26000)));
 
   return Array.from({ length: count }, (): Node => ({
     x: Math.random() * width,
@@ -39,7 +39,7 @@ export function NetworkMotion() {
     let width = 0;
 
     const draw = () => {
-      const linkDistance = Math.max(116, Math.min(210, width * 0.16));
+      const linkDistance = Math.max(108, Math.min(175, width * 0.14));
       context.clearRect(0, 0, width, height);
 
       for (let index = 0; index < nodes.length; index += 1) {
@@ -56,7 +56,7 @@ export function NetworkMotion() {
           context.beginPath();
           context.moveTo(source.x, source.y);
           context.lineTo(target.x, target.y);
-          context.strokeStyle = `rgba(190, 237, 255, ${(1 - distance / linkDistance) * 0.4})`;
+          context.strokeStyle = `rgba(190, 237, 255, ${(1 - distance / linkDistance) * 0.28})`;
           context.lineWidth = 0.8;
           context.stroke();
         }
@@ -65,7 +65,7 @@ export function NetworkMotion() {
       nodes.forEach((node) => {
         context.beginPath();
         context.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
-        context.fillStyle = "rgba(220, 249, 255, .88)";
+        context.fillStyle = "rgba(220, 249, 255, .76)";
         context.fill();
       });
     };

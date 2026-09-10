@@ -130,21 +130,10 @@ export function Portfolio() {
       setProgress(scrollable > 0 ? Math.min(100, (window.scrollY / scrollable) * 100) : 0);
     };
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add("is-visible");
-        });
-      },
-      { threshold: 0.14 },
-    );
-
-    document.querySelectorAll<HTMLElement>(".reveal").forEach((element) => observer.observe(element));
     window.addEventListener("scroll", updateProgress, { passive: true });
     updateProgress();
 
     return () => {
-      observer.disconnect();
       window.removeEventListener("scroll", updateProgress);
     };
   }, []);
@@ -234,12 +223,8 @@ export function Portfolio() {
         </div>
         <div className="hero-grid">
           <div className="hero-copy reveal is-visible">
-            <h1 className="visually-hidden">Gonzalo Pacheco Agredano</h1>
-            <p className="hero-intro">
-              Estudiante de último curso de Ingeniería en Sistemas de Telecomunicación y
-              actualmente en prácticas curriculares en NTT DATA. Me interesan las redes móviles,
-              los sistemas satelitales y el análisis de rendimiento basado en datos.
-            </p>
+            <h1 className="hero-title">Gonzalo Pacheco Agredano</h1>
+            <p className="hero-role">Ingeniería de Telecomunicación · Redes · Satélite</p>
             <div className="hero-actions">
               <a className="button button-primary" href="#proyectos">
                 Ver proyectos <ArrowDownRight size={18} />
@@ -288,6 +273,11 @@ export function Portfolio() {
               </p>
             </div>
             <div className="profile-detail reveal">
+              <p className="profile-intro">
+                Estudiante de último curso de Ingeniería en Sistemas de Telecomunicación y
+                actualmente en prácticas curriculares en NTT DATA. Me interesan las redes móviles,
+                los sistemas satelitales y el análisis de rendimiento basado en datos.
+              </p>
               <p>
                 Combino modelado de canal radio, evaluación de KPIs y automatización con Python
                 y MATLAB. Busco aplicar esa base a redes RAN/Core, 5G/6G, virtualización y

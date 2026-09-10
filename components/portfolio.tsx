@@ -24,6 +24,7 @@ import {
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ContactForm } from "./contact-form";
+import { NetworkMotion } from "./network-motion";
 
 const email = "gonzalo.pachecoagredano@gmail.com";
 const github = "https://github.com/gonzaloop1494";
@@ -219,6 +220,18 @@ export function Portfolio() {
       </header>
 
       <section className="hero" id="inicio">
+        <div className="hero-background" aria-hidden="true">
+          <Image
+            className="hero-background-image"
+            src="/telecom-network-tower.png"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+          />
+          <div className="hero-background-shade" />
+          <NetworkMotion />
+        </div>
         <div className="hero-grid">
           <div className="hero-copy reveal is-visible">
             <h1 className="visually-hidden">Gonzalo Pacheco Agredano</h1>

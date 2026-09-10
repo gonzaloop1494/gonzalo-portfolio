@@ -116,7 +116,13 @@ button { color: inherit; }
   overflow: hidden;
   background: var(--navy-900);
 }
+.hero-background { position: absolute; inset: 0; overflow: hidden; }
+.hero-background-image { object-fit: cover; object-position: center 43%; }
+.hero-background-shade { position: absolute; inset: 0; background: rgba(6, 21, 37, .7); }
+.network-motion { position: absolute; z-index: 1; inset: 0; display: block; width: 100%; height: 100%; pointer-events: none; }
 .hero-grid {
+  position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: minmax(0, 1.18fr) minmax(280px, .72fr);
   gap: clamp(2.5rem, 7vw, 7rem);

@@ -376,6 +376,15 @@ export function Portfolio() {
               <h3>Grado en Ingeniería en Sistemas de Telecomunicación</h3>
               <p>Universidad Rey Juan Carlos, Fuenlabrada. Finalización prevista: junio de 2027.</p>
               <p className="timeline-note">Redes, radiocomunicaciones móviles, satélite, señales y software de sistemas.</p>
+              <a
+                className="timeline-link"
+                href="https://wuolah.com/profile/gonzalo_pacheco"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Ver apuntes de Gonzalo Pacheco en Wuolah"
+              >
+                Ver apuntes en Wuolah <ExternalLink size={15} />
+              </a>
             </article>
             <article className="timeline-card reveal">
               <div className="timeline-heading"><BrainCircuit size={25} strokeWidth={1.5} /><span>TFG</span></div>

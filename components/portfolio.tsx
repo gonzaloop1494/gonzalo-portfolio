@@ -477,21 +477,32 @@ export function Portfolio() {
                 <div><span>Español</span><strong>Nativo</strong></div>
               </div>
             </article>
-            <article className="credential-card reveal">
-              <div className="credential-card-heading">
-                <Code2 size={25} strokeWidth={1.5} />
-                <p>MATLAB Academy</p>
+            <article className="credential-card credential-card-matlab reveal">
+              <div className="credential-media-frame">
+                <Image
+                  className="credential-media-image"
+                  src="/matlab-academy.png"
+                  alt="Logotipo de MATLAB"
+                  fill
+                  sizes="(max-width: 880px) 88vw, 30vw"
+                />
               </div>
-              <h3>MATLAB Onramp</h3>
-              <p className="credential-summary">Formación completada al 100%.</p>
-              <div className="credential-progress" aria-label="MATLAB Onramp completado al 100%"><span /></div>
-              <div className="certificate-actions">
-                <a className="certificate-link" href="/matlab-onramp-certificate.pdf" target="_blank" rel="noreferrer" aria-label="Ver título de MATLAB Onramp">
-                  Ver título <ExternalLink size={14} />
-                </a>
-                <a className="certificate-link" href="/matlab-onramp-progress.pdf" target="_blank" rel="noreferrer" aria-label="Ver progreso de MATLAB Onramp">
-                  Ver progreso <ExternalLink size={14} />
-                </a>
+              <div className="credential-card-content">
+                <div className="credential-card-heading">
+                  <Code2 size={25} strokeWidth={1.5} />
+                  <p>MATLAB Academy</p>
+                </div>
+                <h3>MATLAB Onramp</h3>
+                <p className="credential-summary">Formación completada al 100%.</p>
+                <div className="credential-progress" aria-label="MATLAB Onramp completado al 100%"><span /></div>
+                <div className="certificate-actions">
+                  <a className="certificate-link" href="/matlab-onramp-certificate.pdf" target="_blank" rel="noreferrer" aria-label="Ver título de MATLAB Onramp">
+                    Ver título <ExternalLink size={14} />
+                  </a>
+                  <a className="certificate-link" href="/matlab-onramp-progress.pdf" target="_blank" rel="noreferrer" aria-label="Ver progreso de MATLAB Onramp">
+                    Ver progreso <ExternalLink size={14} />
+                  </a>
+                </div>
               </div>
             </article>
             <article className="credential-card reveal">

@@ -414,13 +414,15 @@ export function Portfolio() {
               </a>
             </article>
             <article className="timeline-card timeline-card-tfg reveal">
-              <Image
-                className="tfg-background"
-                src="/tfg-6g-ris.png"
-                alt="Ilustración conceptual de una red 6G con superficies inteligentes reconfigurables"
-                fill
-                sizes="(max-width: 880px) 88vw, 30vw"
-              />
+              <div className="tfg-image-frame">
+                <Image
+                  className="tfg-image"
+                  src="/tfg-6g-ris.png"
+                  alt="Ilustración conceptual de una red 6G con superficies inteligentes reconfigurables"
+                  fill
+                  sizes="(max-width: 880px) 88vw, 30vw"
+                />
+              </div>
               <div className="tfg-card-content">
                 <div className="timeline-heading"><BrainCircuit size={25} strokeWidth={1.5} /><span>TFG</span></div>
                 <p className="timeline-date">En fase de definición</p>

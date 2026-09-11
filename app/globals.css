@@ -129,7 +129,7 @@ button { color: inherit; }
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: minmax(0, 1.18fr) minmax(280px, .72fr);
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, .55fr);
   gap: clamp(2.5rem, 7vw, 7rem);
   align-items: center;
   min-height: min(790px, 100svh);
@@ -154,7 +154,20 @@ h1, h2, h3 { letter-spacing: 0; }
   border: 0;
 }
 h1 em, h2 em { color: var(--accent); font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
-.hero-specialties { max-width: 840px; margin: 0 0 2rem; color: var(--text); font-family: "Copperplate Gothic", Copperplate, "Copperplate Gothic Light", Georgia, serif; font-size: 2rem; font-weight: 700; line-height: 1.3; text-transform: uppercase; }
+.hero-name { max-width: 840px; margin: 0; color: var(--text); font-family: "Copperplate Gothic", Copperplate, "Copperplate Gothic Light", Georgia, serif; font-size: 3.25rem; font-weight: 700; line-height: 1.04; text-transform: uppercase; }
+.hero-role { max-width: 720px; margin: 1rem 0 0; color: var(--soft); font-family: "Copperplate Gothic", Copperplate, "Copperplate Gothic Light", Georgia, serif; font-size: 1.16rem; font-weight: 700; line-height: 1.28; text-transform: uppercase; }
+.hero-specialties { display: flex; flex-wrap: wrap; align-items: baseline; gap: .25rem .85rem; max-width: 690px; margin: 1.55rem 0 2.2rem; color: rgba(220, 233, 245, .54); font-size: .7rem; font-weight: 800; line-height: 1.5; text-transform: uppercase; }
+.hero-specialties span { --drift-x: 0rem; --drift-y: 0rem; display: inline-flex; align-items: center; gap: .42rem; opacity: .72; animation: specialty-drift 10s ease-in-out infinite; }
+.hero-specialties span::before { content: "*"; color: rgba(98, 223, 210, .62); }
+.hero-specialties span:nth-child(2) { --drift-x: .5rem; --drift-y: -.2rem; animation-delay: -2s; }
+.hero-specialties span:nth-child(3) { --drift-x: -.2rem; --drift-y: .15rem; animation-delay: -5s; }
+.hero-specialties span:nth-child(4) { --drift-x: .75rem; --drift-y: .1rem; animation-delay: -7s; }
+.hero-specialties span:nth-child(5) { --drift-x: -.4rem; --drift-y: -.12rem; animation-delay: -3s; }
+.hero-specialties span:nth-child(6) { --drift-x: .3rem; --drift-y: .18rem; animation-delay: -8s; }
+@keyframes specialty-drift {
+  0%, 100% { transform: translate(var(--drift-x), var(--drift-y)); opacity: .5; }
+  50% { transform: translate(calc(var(--drift-x) + .22rem), calc(var(--drift-y) - .15rem)); opacity: .82; }
+}
 .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; min-height: 46px; padding: .75rem 1.05rem; border: 1px solid transparent; font-size: .85rem; font-weight: 800; cursor: pointer; transition: transform .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease; }
 .button:hover { transform: translateY(-2px); }
@@ -450,7 +463,9 @@ h1 em, h2 em { color: var(--accent); font-family: Georgia, "Times New Roman", se
   .nav-contact { margin-top: .6rem; border-color: var(--accent); color: var(--accent); }
   .hero { min-height: auto; }
   .hero-grid { grid-template-columns: 1fr; min-height: auto; padding-top: 7.5rem; padding-bottom: 5.5rem; }
-  .hero-specialties { max-width: 720px; font-size: 1.65rem; }
+  .hero-name { max-width: 720px; font-size: 2.7rem; }
+  .hero-role { font-size: 1rem; }
+  .hero-specialties { max-width: 620px; }
   .hero-aside { width: min(100%, 390px); justify-self: start; }
   .profile-layout, .skills-layout, .contact-layout { grid-template-columns: 1fr; }
   .profile-detail { max-width: 740px; margin: 0 auto; text-align: center; }
@@ -476,7 +491,9 @@ h1 em, h2 em { color: var(--accent); font-family: Georgia, "Times New Roman", se
 
 @media (max-width: 580px) {
   .scroll-cue { display: none; }
-  .hero-specialties { font-size: 1.35rem; line-height: 1.35; }
+  .hero-name { font-size: 2.2rem; }
+  .hero-role { font-size: .86rem; }
+  .hero-specialties { gap: .35rem .6rem; margin-top: 1.25rem; font-size: .64rem; line-height: 1.55; }
   .section-heading h2, .skills-heading h2 { font-size: clamp(2.15rem, 11vw, 3.2rem); }
   .filter-bar { margin-top: 2rem; }
   .filter-bar a { width: 100%; margin: .4rem 0 0; }

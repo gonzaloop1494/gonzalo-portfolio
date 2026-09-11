@@ -226,9 +226,16 @@ export function Portfolio() {
         </div>
         <div className="hero-grid">
           <div className="hero-copy reveal is-visible">
-            <h1 className="hero-specialties">
-              * REDES * CAMPOS Y RADIO * COMUNICACIONES POR SATÉLITE * RADIOCOMUNICACIONES MÓVILES * SIMULACIONES DE COMUNICACIONES * COMUNICACIONES DE BANDA ANCHA
-            </h1>
+            <h1 className="hero-name">Gonzalo Pacheco Agredano</h1>
+            <p className="hero-role">Ingeniero en Sistemas de Telecomunicación</p>
+            <p className="hero-specialties" aria-label="Áreas de especialización">
+              <span>Redes</span>
+              <span>Campos y radio</span>
+              <span>Comunicaciones por satélite</span>
+              <span>Radiocomunicaciones móviles</span>
+              <span>Simulaciones de comunicaciones</span>
+              <span>Comunicaciones de banda ancha</span>
+            </p>
             <div className="hero-actions">
               <a className="button button-primary" href="#proyectos">
                 Ver proyectos <ArrowDownRight size={18} />

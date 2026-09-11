@@ -415,7 +415,11 @@ export function Portfolio() {
                 Ver apuntes en Wuolah <ExternalLink size={15} />
               </a>
             </article>
-            <article className="timeline-card timeline-card-tfg reveal">
+            <Link
+              className="timeline-card timeline-card-tfg reveal"
+              href="/tfg"
+              aria-label="Abrir la bitácora del Trabajo Fin de Grado"
+            >
               <div className="tfg-image-frame">
                 <Image
                   className="tfg-image"
@@ -429,10 +433,11 @@ export function Portfolio() {
                 <div className="timeline-heading"><BrainCircuit size={25} strokeWidth={1.5} /><span>TFG</span></div>
                 <p className="timeline-date">En fase de definición</p>
                 <h3>Trabajo Fin de Grado</h3>
-                <p>El espacio recogerá el problema, la metodología y las conclusiones del proyecto final cuando el tema quede asignado.</p>
-                <p className="timeline-note">Una sección preparada para mostrar el desarrollo con contexto técnico.</p>
+                <p>Explora la línea de investigación, las lecturas de partida y la hoja de ruta del proyecto.</p>
+                <p className="timeline-note">Una bitácora para documentar el desarrollo con contexto técnico.</p>
+                <span className="timeline-card-cta">Abrir bitácora del TFG <ArrowUpRight size={15} /></span>
               </div>
-            </article>
+            </Link>
             <Link
               className="timeline-card timeline-card-ntt reveal"
               href="/practicas"

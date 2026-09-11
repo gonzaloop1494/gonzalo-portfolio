@@ -23,6 +23,7 @@ import {
   X,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ContactForm } from "./contact-form";
 import { NetworkMotion } from "./network-motion";
@@ -431,13 +432,28 @@ export function Portfolio() {
                 <p className="timeline-note">Una sección preparada para mostrar el desarrollo con contexto técnico.</p>
               </div>
             </article>
-            <article className="timeline-card reveal">
-              <div className="timeline-heading"><BriefcaseBusiness size={25} strokeWidth={1.5} /><span>Candidatura</span></div>
-              <p className="timeline-date">Prácticas curriculares</p>
-              <h3>NTT DATA Pathfinder</h3>
-              <p>Interés en incorporarme a un entorno de aprendizaje y proyectos reales de redes, software, datos, virtualización y optimización.</p>
-              <p className="timeline-note">Disponibilidad para prácticas en Madrid con modelo híbrido, según compatibilidad académica.</p>
-            </article>
+            <Link
+              className="timeline-card timeline-card-ntt reveal"
+              href="/practicas"
+              aria-label="Abrir la bitácora de prácticas curriculares en NTT DATA"
+            >
+              <div className="ntt-card-image-frame">
+                <Image
+                  className="ntt-card-logo"
+                  src="/ntt-data-practicas.png"
+                  alt="NTT DATA"
+                  fill
+                  sizes="(max-width: 880px) 88vw, 30vw"
+                />
+              </div>
+              <div className="ntt-card-content">
+                <div className="timeline-heading"><BriefcaseBusiness size={25} strokeWidth={1.5} /><span>Prácticas</span></div>
+                <p className="timeline-date">Prácticas curriculares</p>
+                <h3>NTT DATA Spain</h3>
+                <p>Validación de soluciones de red fija e hiperautomatización, con atención a procesos, integraciones y datos de provisión.</p>
+                <span className="timeline-card-cta">Ver bitácora de prácticas <ArrowUpRight size={15} /></span>
+              </div>
+            </Link>
           </div>
         </section>
 

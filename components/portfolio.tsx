@@ -465,15 +465,17 @@ export function Portfolio() {
                 <Languages size={25} strokeWidth={1.5} />
                 <p>Idiomas</p>
               </div>
-              <h3>Inglés C1</h3>
+              <div className="credential-title-row">
+                <h3>Inglés C1</h3>
+                <a className="certificate-link" href="/english-c1-certificate.pdf" target="_blank" rel="noreferrer" aria-label="Ver título de inglés C1">
+                  Ver título de inglés <ExternalLink size={14} />
+                </a>
+              </div>
               <p className="credential-summary">Uso fluido y profesional.</p>
               <div className="language-list">
                 <div><span>Francés</span><strong>Básico profesional</strong></div>
                 <div><span>Español</span><strong>Nativo</strong></div>
               </div>
-              <a className="certificate-link" href="/english-c1-certificate.pdf" target="_blank" rel="noreferrer" aria-label="Ver título de inglés C1">
-                Ver título de inglés <ExternalLink size={14} />
-              </a>
             </article>
             <article className="credential-card reveal">
               <div className="credential-card-heading">

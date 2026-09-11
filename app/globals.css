@@ -275,6 +275,9 @@ h1 em, h2 em { color: var(--accent); font-family: Georgia, "Times New Roman", se
 .credential-card-heading svg { color: var(--accent); }
 .credential-card-heading p { margin: 0; color: var(--muted); font-size: .71rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .credential-card h3 { margin: 2.8rem 0 .55rem; font-size: clamp(1.35rem, 2vw, 1.85rem); line-height: 1.1; }
+.credential-title-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .65rem; margin: 2.8rem 0 .55rem; }
+.credential-title-row h3 { margin: 0; }
+.credential-title-row .certificate-link { min-height: 30px; padding: .35rem .5rem; font-size: .68rem; }
 .credential-summary { min-height: 3rem; margin-bottom: 1.35rem; color: var(--muted); font-size: .88rem; line-height: 1.6; }
 .language-list { display: grid; gap: .45rem; margin-bottom: auto; }
 .language-list div { display: flex; align-items: baseline; justify-content: space-between; gap: .75rem; padding-top: .65rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .82rem; }

@@ -460,21 +460,32 @@ export function Portfolio() {
         <section className="section credentials-section">
           <div className="section-marker reveal"><span>05</span> Certificaciones</div>
           <div className="credentials-grid">
-            <article className="credential-card reveal">
-              <div className="credential-card-heading">
-                <Languages size={25} strokeWidth={1.5} />
-                <p>Idiomas</p>
+            <article className="credential-card credential-card-english reveal">
+              <div className="credential-media-frame credential-media-frame-english">
+                <Image
+                  className="credential-media-image"
+                  src="/english-cambridge-c1.png"
+                  alt="Fragmento del certificado Cambridge English C1 de Gonzalo Pacheco Agredano"
+                  fill
+                  sizes="(max-width: 880px) 88vw, 30vw"
+                />
               </div>
-              <div className="credential-title-row">
-                <h3>Inglés C1</h3>
-                <a className="certificate-link" href="/english-c1-certificate.pdf" target="_blank" rel="noreferrer" aria-label="Ver título de inglés C1">
-                  Ver título de inglés <ExternalLink size={14} />
-                </a>
-              </div>
-              <p className="credential-summary">Uso fluido y profesional.</p>
-              <div className="language-list">
-                <div><span>Francés</span><strong>Básico profesional</strong></div>
-                <div><span>Español</span><strong>Nativo</strong></div>
+              <div className="credential-card-content">
+                <div className="credential-card-heading">
+                  <Languages size={25} strokeWidth={1.5} />
+                  <p>Idiomas</p>
+                </div>
+                <div className="credential-title-row">
+                  <h3>Inglés C1</h3>
+                  <a className="certificate-link" href="/english-c1-certificate.pdf" target="_blank" rel="noreferrer" aria-label="Ver título de inglés C1">
+                    Ver título de inglés <ExternalLink size={14} />
+                  </a>
+                </div>
+                <p className="credential-summary">Uso fluido y profesional.</p>
+                <div className="language-list">
+                  <div><span>Francés</span><strong>Básico profesional</strong></div>
+                  <div><span>Español</span><strong>Nativo</strong></div>
+                </div>
               </div>
             </article>
             <article className="credential-card credential-card-matlab reveal">

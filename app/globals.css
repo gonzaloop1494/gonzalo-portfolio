@@ -271,10 +271,12 @@ h1 em, h2 em { color: var(--accent); font-family: Georgia, "Times New Roman", se
 .credentials-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; border: 1px solid var(--line); background: var(--line); }
 .credential-card { display: flex; flex-direction: column; min-height: 335px; padding: clamp(1.4rem, 3vw, 2rem); background: var(--navy-900); transition: background-color .25s ease, transform .25s ease; }
 .credential-card:hover { background: var(--navy-800); transform: translateY(-4px); }
-.credential-card-matlab { padding: 0; overflow: hidden; }
+.credential-card-matlab, .credential-card-english { padding: 0; overflow: hidden; }
 .credential-media-frame { position: relative; aspect-ratio: 5 / 2; overflow: hidden; border-bottom: 1px solid var(--line); background: #0870ae; }
 .credential-media-image { object-fit: cover; object-position: center 54%; transition: transform .35s ease; }
-.credential-card-matlab:hover .credential-media-image { transform: scale(1.035); }
+.credential-media-frame-english { background: #f7f8f9; }
+.credential-media-frame-english .credential-media-image { object-position: center; }
+.credential-card-matlab:hover .credential-media-image, .credential-card-english:hover .credential-media-image { transform: scale(1.035); }
 .credential-card-content { display: flex; flex: 1; flex-direction: column; padding: clamp(1.4rem, 3vw, 2rem); }
 .credential-card-heading { display: flex; align-items: center; gap: .65rem; }
 .credential-card-heading svg { color: var(--accent); }

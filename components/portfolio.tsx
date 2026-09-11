@@ -226,8 +226,9 @@ export function Portfolio() {
         </div>
         <div className="hero-grid">
           <div className="hero-copy reveal is-visible">
-            <h1 className="hero-title">Gonzalo Pacheco Agredano</h1>
-            <p className="hero-role">Ingeniería de Telecomunicación · Redes · Satélite</p>
+            <h1 className="hero-specialties">
+              * REDES * CAMPOS Y RADIO * COMUNICACIONES POR SATÉLITE * RADIOCOMUNICACIONES MÓVILES * SIMULACIONES DE COMUNICACIONES * COMUNICACIONES DE BANDA ANCHA
+            </h1>
             <div className="hero-actions">
               <a className="button button-primary" href="#proyectos">
                 Ver proyectos <ArrowDownRight size={18} />

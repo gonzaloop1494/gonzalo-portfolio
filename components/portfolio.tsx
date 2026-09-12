@@ -165,17 +165,21 @@ export function Portfolio() {
 
   useEffect(() => {
     const markers = Array.from(document.querySelectorAll<HTMLElement>("[data-section-marker]"));
-    if (!markers.length) return;
+    const contentBlocks = Array.from(document.querySelectorAll<HTMLElement>(".reveal")).filter(
+      (block) => !block.classList.contains("is-visible"),
+    );
+    const scrollItems = [...markers, ...contentBlocks];
+    if (!scrollItems.length) return;
 
     if (
       window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
       !("IntersectionObserver" in window)
     ) {
-      markers.forEach((marker) => marker.classList.add("is-visible"));
+      scrollItems.forEach((item) => item.classList.add("is-visible"));
       return;
     }
 
-    markers.forEach((marker) => marker.classList.add("is-observed"));
+    scrollItems.forEach((item) => item.classList.add("is-observed"));
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -186,10 +190,10 @@ export function Portfolio() {
           observer.unobserve(entry.target);
         });
       },
-      { threshold: 0.2, rootMargin: "0px 0px -8% 0px" },
+      { threshold: 0.15, rootMargin: "0px 0px -8% 0px" },
     );
 
-    markers.forEach((marker) => observer.observe(marker));
+    scrollItems.forEach((item) => observer.observe(item));
 
     return () => observer.disconnect();
   }, []);
@@ -402,7 +406,7 @@ export function Portfolio() {
             {visibleProjects.map((project, index) => {
               const Icon = project.icon;
               return (
-                <article className="project-card reveal" key={project.title} style={{ transitionDelay: `${index * 45}ms` }}>
+                <article className="project-card reveal" key={project.title} style={{ animationDelay: `${index * 45}ms` }}>
                   <div className="project-topline">
                     <Icon size={23} strokeWidth={1.5} />
                     <span>{project.type}</span>

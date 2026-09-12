@@ -194,6 +194,7 @@ h1 em, h2 em { color: var(--accent); font-family: Georgia, "Times New Roman", se
 .scroll-cue:hover { color: var(--accent); }
 .scroll-cue svg { animation: bob 1.4s ease-in-out infinite; }
 @keyframes bob { 50% { transform: translateY(4px); } }
+@keyframes content-reveal { from { opacity: 0; transform: translateX(1.5rem); } to { opacity: 1; transform: translateX(0); } }
 
 .section { max-width: 1440px; margin: 0 auto; padding: clamp(5rem, 11vw, 9rem) clamp(1.3rem, 6vw, 6rem); }
 .section-marker { display: flex; align-items: center; gap: .78rem; color: var(--muted); font-size: .86rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
@@ -201,6 +202,9 @@ h1 em, h2 em { color: var(--accent); font-family: Georgia, "Times New Roman", se
 @media (prefers-reduced-motion: no-preference) {
   .section-marker[data-section-marker].is-observed { opacity: 0; transform: translateX(2.25rem); transition: opacity .48s ease, transform .58s cubic-bezier(.16, 1, .3, 1); will-change: opacity, transform; }
   .section-marker[data-section-marker].is-observed.is-visible { opacity: 1; transform: translateX(0); }
+  .reveal.is-observed:not(.is-visible) { opacity: 0; transform: translateX(1.5rem); }
+  .reveal.is-observed.is-visible { animation: content-reveal .58s cubic-bezier(.16, 1, .3, 1) backwards; }
+  .reveal.is-observed .section-marker[data-section-marker] { opacity: 1; transform: none; transition: none; will-change: auto; }
 }
 .profile-layout { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(280px, .7fr); gap: clamp(2.5rem, 8vw, 8rem); align-items: center; padding-top: clamp(2.5rem, 7vw, 5.5rem); }
 .profile-detail { max-width: 740px; padding-bottom: .5rem; }

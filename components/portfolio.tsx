@@ -356,18 +356,6 @@ export function Portfolio() {
                 Fuenlabrada.
               </p>
               <p>
-                En este curso tengo que desarrollar mi TFG, que va a tratar sobre un escenario
-                Cell-Free y asistido por RIS (Reconfigurable Intelligent Surfaces), en el que
-                optimizaré la asignación a cada usuario de los meta-átomos de las RIS, como posible
-                propuesta para el estándar 6G.
-              </p>
-              <p>
-                En este curso también voy a realizar las prácticas en NTT DATA, en las cuales voy
-                a tener la posibilidad de aplicar la base académica en la validación funcional y
-                técnica de soluciones de red fija e hiperautomatización. El trabajo conecta pruebas,
-                procesos, interfaces, integraciones y calidad de los datos.
-              </p>
-              <p>
                 Durante la carrera he orientado mis proyectos y formación hacia sistemas de
                 comunicaciones y comportamiento de red, intentando entender cómo influyen las
                 decisiones de diseño en el rendimiento, la eficiencia y la calidad de servicio. Para
@@ -409,17 +397,10 @@ export function Portfolio() {
                   </div>
                 </div>
                 <div>
-                  <BrainCircuit size={20} strokeWidth={1.6} />
-                  <div>
-                    <dt>Actualidad</dt>
-                    <dd>TFG Cell-Free + RIS · NTT DATA</dd>
-                  </div>
-                </div>
-                <div>
                   <Network size={20} strokeWidth={1.6} />
                   <div>
                     <dt>Perfil</dt>
-                    <dd>Simulación, KPIs y software técnico</dd>
+                    <dd>Radiocomunicaciones móviles, antenas, simulaciones, KPIs y programación</dd>
                   </div>
                 </div>
                 <div>

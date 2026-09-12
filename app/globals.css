@@ -194,9 +194,9 @@ h1 em, h2 em { color: var(--accent); font-family: Georgia, "Times New Roman", se
 .hero-meta { display: flex; flex-direction: column; gap: .55rem; padding-top: 1rem; color: var(--muted); font-size: .78rem; font-weight: 700; }
 .hero-meta p { display: flex; align-items: center; gap: .4rem; margin: 0; }
 .hero-meta svg { color: var(--accent); }
-.hero-meta .hero-university { align-items: center; flex-wrap: nowrap; gap: .45rem; }
-.hero-university > span { flex: 1 1 185px; min-width: 0; }
-.urjc-logo { flex: 0 0 90px; width: 90px; height: auto; padding: .16rem .28rem; background: var(--white); object-fit: contain; }
+.hero-meta .hero-university { align-items: center; flex-wrap: nowrap; gap: .3rem; }
+.hero-university > span { flex: 0 1 auto; min-width: 0; font-size: .7rem; white-space: nowrap; }
+.urjc-logo { flex: 0 0 88px; width: 88px; height: auto; padding: .14rem .24rem; background: var(--white); object-fit: contain; }
 .hero-meta .hero-ntt { flex-wrap: wrap; gap: .45rem; }
 .ntt-logo { width: 72px; height: auto; padding: .18rem .28rem; background: var(--white); }
 .scroll-cue { position: absolute; z-index: 4; right: clamp(1.3rem, 4vw, 5rem); bottom: 1.65rem; display: flex; align-items: center; gap: .4rem; color: var(--muted); font-size: .7rem; font-weight: 800; text-transform: uppercase; }

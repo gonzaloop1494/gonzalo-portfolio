@@ -371,7 +371,7 @@ export function Portfolio() {
               <p className="hero-university">
                 <BookOpen size={16} />
                 <span>Universidad Rey Juan Carlos, Escuela de Ingeniería de Fuenlabrada</span>
-                <Image className="urjc-logo" src="/urjc-eif-logo.png" alt="Logotipo de la Universidad Rey Juan Carlos" width={260} height={200} />
+                <Image className="urjc-logo" src="/urjc-eif-logo.png" alt="Logotipo de la Universidad Rey Juan Carlos y la Escuela de Ingeniería de Fuenlabrada" width={2560} height={642} />
               </p>
               <p className="hero-ntt">
                 <CircleCheck size={16} />

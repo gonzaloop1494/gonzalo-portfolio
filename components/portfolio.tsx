@@ -10,6 +10,7 @@ import {
   Code2,
   Download,
   ExternalLink,
+  Github,
   GitFork,
   GraduationCap,
   Languages,
@@ -286,9 +287,39 @@ export function Portfolio() {
               {label}
             </a>
           ))}
-          <a className="nav-contact" href={`mailto:${email}`} onClick={closeMenu}>
-            Escribirme <ArrowUpRight size={15} />
-          </a>
+          <div className="nav-contact-icons" role="group" aria-label="Enlaces de contacto">
+            <a
+              className="nav-contact-icon"
+              href={`mailto:${email}`}
+              aria-label="Enviar correo a Gonzalo Pacheco Agredano"
+              data-tooltip="Correo"
+              onClick={closeMenu}
+            >
+              <Mail size={17} strokeWidth={1.8} />
+            </a>
+            <a
+              className="nav-contact-icon"
+              href={github}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Abrir GitHub de Gonzalo Pacheco Agredano"
+              data-tooltip="GitHub"
+              onClick={closeMenu}
+            >
+              <Github size={17} strokeWidth={1.8} />
+            </a>
+            <a
+              className="nav-contact-icon"
+              href={linkedin}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Abrir LinkedIn de Gonzalo Pacheco Agredano"
+              data-tooltip="LinkedIn"
+              onClick={closeMenu}
+            >
+              <Linkedin size={17} strokeWidth={1.8} />
+            </a>
+          </div>
         </nav>
       </header>
 

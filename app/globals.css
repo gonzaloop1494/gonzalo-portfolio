@@ -34,20 +34,21 @@ button { color: inherit; }
   z-index: 200;
   top: 0;
   left: 0;
-  width: 13px;
-  height: 13px;
-  border: 1px solid var(--cursor-light);
-  border-radius: 50%;
-  background: var(--cursor-light);
-  box-shadow: 0 0 0 4px rgba(181, 237, 255, .14), 0 0 18px rgba(181, 237, 255, .78);
+  width: 22px;
+  height: 27px;
+  filter: drop-shadow(0 0 2px rgba(181, 237, 255, .86));
   opacity: 0;
   pointer-events: none;
   transform: translate3d(-100px, -100px, 0);
-  transition: opacity .16s ease, width .16s ease, height .16s ease;
+  transition: opacity .12s ease;
 }
+.cursor-light svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.cursor-light path { fill: #07101e; stroke: var(--cursor-light); stroke-width: 1.55; stroke-linejoin: round; }
 .cursor-light.is-visible { opacity: 1; }
 @media (pointer: fine) {
   body.cursor-light-active, body.cursor-light-active * { cursor: none !important; }
+  body.cursor-light-active.cursor-text-active .cursor-light { opacity: 0 !important; }
+  body.cursor-light-active.cursor-text-active :is(input, textarea, [contenteditable="true"]) { cursor: text !important; }
 }
 
 .skip-link {

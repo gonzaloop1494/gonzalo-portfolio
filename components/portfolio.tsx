@@ -175,16 +175,25 @@ export function Portfolio() {
     document.body.classList.add("cursor-light-active");
 
     const moveCursor = (event: PointerEvent) => {
-      cursor.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0)`;
+      const textTarget = event.target instanceof Element && Boolean(
+        event.target.closest("input, textarea, [contenteditable='true']"),
+      );
+
+      document.body.classList.toggle("cursor-text-active", textTarget);
+      cursor.style.transform = `translate3d(${event.clientX - 2}px, ${event.clientY - 2}px, 0)`;
       cursor.classList.add("is-visible");
     };
-    const hideCursor = () => cursor.classList.remove("is-visible");
+    const hideCursor = () => {
+      cursor.classList.remove("is-visible");
+      document.body.classList.remove("cursor-text-active");
+    };
 
     window.addEventListener("pointermove", moveCursor, { passive: true });
     document.documentElement.addEventListener("pointerleave", hideCursor);
 
     return () => {
       document.body.classList.remove("cursor-light-active");
+      document.body.classList.remove("cursor-text-active");
       window.removeEventListener("pointermove", moveCursor);
       document.documentElement.removeEventListener("pointerleave", hideCursor);
     };
@@ -205,7 +214,11 @@ export function Portfolio() {
         Ir al contenido
       </a>
       <div className="progress" aria-hidden="true" style={{ transform: `scaleX(${progress / 100})` }} />
-      <div ref={cursorRef} className="cursor-light" aria-hidden="true" />
+      <div ref={cursorRef} className="cursor-light" aria-hidden="true">
+        <svg viewBox="0 0 28 34" focusable="false">
+          <path d="M2.5 2.5v24.7l6.6-5.7 4.9 10.3 5.1-2.4-4.8-10.3h10.8L2.5 2.5Z" />
+        </svg>
+      </div>
 
       <header className="site-header">
         <a className="brand-lockup" href="#inicio" onClick={closeMenu} aria-label="Ir al inicio de Gonzalo Pacheco Agredano">

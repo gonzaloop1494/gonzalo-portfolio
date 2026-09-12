@@ -19,6 +19,7 @@ import {
   Menu,
   Network,
   Radio,
+  Satellite,
   X,
 } from "lucide-react";
 import Image from "next/image";
@@ -139,6 +140,16 @@ const skillGroups = [
     items: ["PCA / LRC", "BER & throughput", "Modelado de canal", "PDF / CDF", "KPIs", "Git / GitHub"],
   },
 ];
+
+const profileInterests = [
+  { label: "Redes móviles y 5G (RAN/Core)", icon: Radio },
+  { label: "Sistemas de comunicaciones medibles y robustos", icon: CircleCheck },
+  { label: "Network slicing y virtualización", icon: Network },
+  { label: "Monitorización y optimización de red", icon: BarChart3 },
+  { label: "Evolución hacia arquitecturas 6G", icon: BrainCircuit },
+  { label: "Sistemas satelitales", icon: Satellite },
+  { label: "Análisis de rendimiento basado en datos", icon: Code2 },
+] as const;
 
 const filters = ["Todos", "Telecom", "Software", "Datos"] as const;
 type Filter = (typeof filters)[number];
@@ -340,15 +351,42 @@ export function Portfolio() {
           <div className="profile-layout">
             <div className="profile-detail reveal">
               <p className="profile-intro">
-                Estudiante de último curso de Ingeniería en Sistemas de Telecomunicación y
-                actualmente en prácticas curriculares en NTT DATA. Me interesan las redes móviles,
-                los sistemas satelitales y el análisis de rendimiento basado en datos.
+                Soy un estudiante de último curso del grado en Ingeniería en Sistemas de
+                Telecomunicación, en la Universidad Rey Juan Carlos, Escuela de Ingeniería de
+                Fuenlabrada.
               </p>
               <p>
-                Combino modelado de canal radio, evaluación de KPIs y automatización con Python
-                y MATLAB. Busco aplicar esa base a redes RAN/Core, 5G/6G, virtualización y
-                sistemas de comunicaciones medibles y robustos.
+                En este curso tengo que desarrollar mi TFG, que va a tratar sobre un escenario
+                Cell-Free y asistido por RIS (Reconfigurable Intelligent Surfaces), en el que
+                optimizaré la asignación a cada usuario de los meta-átomos de las RIS, como posible
+                propuesta para el estándar 6G.
               </p>
+              <p>
+                En este curso también voy a realizar las prácticas en NTT DATA, en las cuales voy
+                a tener la posibilidad de aplicar la base académica en la validación funcional y
+                técnica de soluciones de red fija e hiperautomatización. El trabajo conecta pruebas,
+                procesos, interfaces, integraciones y calidad de los datos.
+              </p>
+              <p>
+                Durante la carrera he orientado mis proyectos y formación hacia sistemas de
+                comunicaciones y comportamiento de red, intentando entender cómo influyen las
+                decisiones de diseño en el rendimiento, la eficiencia y la calidad de servicio. Para
+                ello, he trabajado con simulación, tratamiento de datos y desarrollo técnico utilizando,
+                entre otros, Python, Rust, C y, sobre todo, MATLAB. En estos últimos cursos también he
+                podido profundizar en el modelado de canal radio y la evaluación de KPIs.
+              </p>
+              <p className="profile-interest-intro">
+                Entre mis intereses, y a lo que me gustaría aplicar mi base técnica adquirida, se
+                encuentran:
+              </p>
+              <ul className="profile-interest-list" aria-label="Intereses técnicos">
+                {profileInterests.map(({ label, icon: Icon }) => (
+                  <li key={label}>
+                    <Icon size={18} strokeWidth={1.65} aria-hidden="true" />
+                    <span>{label}</span>
+                  </li>
+                ))}
+              </ul>
               <a className="text-link" href={cvFile} target="_blank" rel="noreferrer">
                 Consultar CV detallado <ArrowUpRight size={17} />
               </a>
@@ -364,17 +402,31 @@ export function Portfolio() {
                   </div>
                 </div>
                 <div>
+                  <GraduationCap size={20} strokeWidth={1.6} />
+                  <div>
+                    <dt>Formación</dt>
+                    <dd>URJC · Ingeniería de Telecomunicación</dd>
+                  </div>
+                </div>
+                <div>
+                  <BrainCircuit size={20} strokeWidth={1.6} />
+                  <div>
+                    <dt>Actualidad</dt>
+                    <dd>TFG Cell-Free + RIS · NTT DATA</dd>
+                  </div>
+                </div>
+                <div>
                   <Network size={20} strokeWidth={1.6} />
                   <div>
                     <dt>Perfil</dt>
-                    <dd>Redes + datos</dd>
+                    <dd>Simulación, KPIs y software técnico</dd>
                   </div>
                 </div>
                 <div>
                   <Radio size={20} strokeWidth={1.6} />
                   <div>
                     <dt>Intereses</dt>
-                    <dd>5G, satélite y espacio</dd>
+                    <dd>5G/6G, satélite, red y datos</dd>
                   </div>
                 </div>
               </dl>

@@ -208,13 +208,20 @@ h1 em, h2 em { color: var(--accent); font-family: Georgia, "Times New Roman", se
   .reveal.is-observed.is-visible { animation: content-reveal .58s cubic-bezier(.16, 1, .3, 1) backwards; }
   .reveal.is-observed .section-marker[data-section-marker] { opacity: 1; transform: none; transition: none; will-change: auto; }
 }
-.profile-layout { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(280px, .7fr); gap: clamp(2.5rem, 8vw, 8rem); align-items: center; padding-top: clamp(2.5rem, 7vw, 5.5rem); }
-.profile-detail { max-width: 740px; padding-bottom: .5rem; }
-.profile-detail p { color: var(--muted); font-size: clamp(1rem, 1.35vw, 1.14rem); line-height: 1.75; }
+.profile-layout { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(280px, .7fr); gap: clamp(2.5rem, 8vw, 8rem); align-items: start; padding-top: clamp(2.5rem, 7vw, 5.5rem); }
+.profile-detail { max-width: 780px; padding-bottom: .5rem; }
+.profile-detail p { margin: 0; color: var(--muted); font-size: clamp(1rem, 1.35vw, 1.14rem); line-height: 1.75; }
+.profile-detail p + p { margin-top: 1.15rem; }
 .profile-detail .profile-intro { max-width: 700px; color: var(--soft); font-weight: 700; }
+.profile-detail .profile-interest-intro { margin-top: 2.1rem; color: var(--soft); font-weight: 700; }
+.profile-interest-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem .8rem; margin: 1.1rem 0 0; padding: 0; list-style: none; }
+.profile-interest-list li { display: flex; align-items: flex-start; min-height: 3.7rem; gap: .6rem; padding: .72rem .78rem; border: 1px solid var(--line); background: var(--navy-800); }
+.profile-interest-list li:last-child { grid-column: 1 / -1; }
+.profile-interest-list svg { flex: 0 0 auto; margin-top: .08rem; color: var(--accent); }
+.profile-interest-list span { color: var(--soft); font-size: .82rem; font-weight: 800; line-height: 1.38; }
 .text-link { display: inline-flex; align-items: center; gap: .35rem; margin-top: .75rem; border-bottom: 1px solid var(--accent); color: var(--accent); font-size: .85rem; font-weight: 800; }
 .text-link:hover { color: var(--accent-strong); border-color: var(--accent-strong); }
-.profile-data-card { width: 100%; padding: 1.35rem 1.45rem; border: 1px solid var(--line); background: var(--navy-800); }
+.profile-data-card { position: sticky; top: 6.5rem; width: 100%; padding: 1.35rem 1.45rem; border: 1px solid var(--line); background: var(--navy-800); }
 .profile-data-heading { margin: 0; color: var(--accent); font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .profile-data-list { margin: 1rem 0 0; }
 .profile-data-list > div { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: .75rem; padding: 1rem 0; border-top: 1px solid var(--line); }
@@ -490,7 +497,8 @@ h1 em, h2 em { color: var(--accent); font-family: Georgia, "Times New Roman", se
   .nav-contact { margin-top: .6rem; border-color: var(--accent); color: var(--accent); }
   .profile-layout, .skills-layout, .contact-layout { grid-template-columns: 1fr; }
   .profile-detail { max-width: 740px; margin: 0 auto; text-align: center; }
-  .profile-data-card { max-width: 560px; margin: 0 auto; }
+  .profile-interest-list { text-align: left; }
+  .profile-data-card { position: static; max-width: 560px; margin: 0 auto; }
   .credentials-grid { grid-template-columns: 1fr; }
   .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .trajectory-grid { grid-template-columns: 1fr; }
@@ -516,6 +524,8 @@ h1 em, h2 em { color: var(--accent); font-family: Georgia, "Times New Roman", se
   .hero-role { font-size: .86rem; }
   .hero-specialties { min-height: 360px; gap: .7rem 1rem; margin-top: .65rem; font-size: .6rem; line-height: 1.55; }
   .hero-specialty-row, .hero-specialty-row-interlude-one, .hero-specialty-row-interlude-two { flex-wrap: wrap; justify-content: flex-start; }
+  .profile-interest-list { grid-template-columns: 1fr; }
+  .profile-interest-list li:last-child { grid-column: auto; }
   .section-heading h2, .skills-heading h2 { font-size: clamp(2.15rem, 11vw, 3.2rem); }
   .filter-bar { margin-top: 2rem; }
   .filter-bar a { width: 100%; margin: .4rem 0 0; }

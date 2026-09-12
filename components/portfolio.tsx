@@ -39,26 +39,27 @@ const navigation = [
   ["Contacto", "contacto"],
 ] as const;
 
-const heroSpecialties = [
-  "Redes",
-  "Campos y radio",
-  "Comunicaciones por satélite",
-  "Radiocomunicaciones móviles",
-  "Simulaciones de comunicaciones",
-  "Comunicaciones de banda ancha",
-  "Señales",
-  "Sistemas",
-  "Electrónica",
-  "Programación",
-  "Radiación",
-  "Antenas",
-  "Sistemas digitales",
-  "Ensamblador",
-  "Software de sistemas",
-  "Linux",
-  "Procesamiento de señales",
-  "Microondas",
-  "Proyectos de telecomunicaciones",
+const heroSpecialtyRows = [
+  {
+    id: "primary-one",
+    items: ["Redes", "Campos y radio", "Comunicaciones por satélite", "Radiocomunicaciones móviles"],
+  },
+  {
+    id: "interlude-one",
+    items: ["Simulaciones de comunicaciones", "Comunicaciones de banda ancha"],
+  },
+  {
+    id: "primary-two",
+    items: ["Señales", "Sistemas", "Electrónica", "Programación", "Radiación", "Antenas"],
+  },
+  {
+    id: "interlude-two",
+    items: ["Sistemas digitales", "Ensamblador", "Proyectos de telecomunicaciones"],
+  },
+  {
+    id: "primary-three",
+    items: ["Software de sistemas", "Linux", "Procesamiento de señales", "Microondas"],
+  },
 ] as const;
 
 const projects = [
@@ -259,7 +260,7 @@ export function Portfolio() {
                 alt="Gonzalo Pacheco Agredano"
                 width={855}
                 height={1287}
-                sizes="(max-width: 880px) 68vw, 280px"
+                sizes="(max-width: 1100px) 68vw, 280px"
                 priority
               />
             </div>
@@ -272,9 +273,13 @@ export function Portfolio() {
               </p>
             </div>
           </div>
-          <p className="hero-specialties" aria-label="Áreas de especialización">
-            {heroSpecialties.map((specialty) => <span key={specialty}>{specialty}</span>)}
-          </p>
+          <div className="hero-specialties" aria-label="Áreas de especialización">
+            {heroSpecialtyRows.map(({ id, items }) => (
+              <div className={`hero-specialty-row hero-specialty-row-${id}`} key={id}>
+                {items.map((specialty) => <span key={specialty}>{specialty}</span>)}
+              </div>
+            ))}
+          </div>
         </div>
         <a className="scroll-cue" href="#perfil">
           <span>Desplazar</span> <ChevronDown size={18} />

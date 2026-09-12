@@ -164,6 +164,37 @@ export function Portfolio() {
   }, []);
 
   useEffect(() => {
+    const markers = Array.from(document.querySelectorAll<HTMLElement>("[data-section-marker]"));
+    if (!markers.length) return;
+
+    if (
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      !("IntersectionObserver" in window)
+    ) {
+      markers.forEach((marker) => marker.classList.add("is-visible"));
+      return;
+    }
+
+    markers.forEach((marker) => marker.classList.add("is-observed"));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.2, rootMargin: "0px 0px -8% 0px" },
+    );
+
+    markers.forEach((marker) => observer.observe(marker));
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
     if (
       !window.matchMedia("(pointer: fine)").matches ||
       window.matchMedia("(prefers-reduced-motion: reduce)").matches
@@ -301,7 +332,7 @@ export function Portfolio() {
 
       <div id="contenido">
         <section className="section intro-section" id="perfil">
-          <div className="section-marker reveal"><span>01</span> Perfil</div>
+          <div className="section-marker" data-section-marker><span>01</span> Perfil</div>
           <div className="profile-layout">
             <div className="profile-detail reveal">
               <p className="profile-intro">
@@ -349,7 +380,7 @@ export function Portfolio() {
 
         <section className="section projects-section" id="proyectos">
           <div className="section-heading reveal">
-            <div className="section-marker"><span>02</span> Proyectos</div>
+            <div className="section-marker" data-section-marker><span>02</span> Proyectos</div>
             <h2>Lo técnico tiene mejor historia cuando se puede <em>mostrar.</em></h2>
           </div>
           <div className="filter-bar reveal" aria-label="Filtrar proyectos">
@@ -394,7 +425,7 @@ export function Portfolio() {
         <section className="section skills-section">
           <div className="skills-layout">
             <div className="skills-heading reveal">
-              <div className="section-marker"><span>03</span> Habilidades</div>
+              <div className="section-marker" data-section-marker><span>03</span> Habilidades</div>
               <h2>Herramientas para <em>analizar, medir y construir.</em></h2>
             </div>
             <div className="skill-groups">
@@ -431,7 +462,7 @@ export function Portfolio() {
 
         <section className="section trajectory-section" id="trayectoria">
           <div className="section-heading reveal">
-            <div className="section-marker"><span>04</span> Trayectoria</div>
+            <div className="section-marker" data-section-marker><span>04</span> Trayectoria</div>
             <h2>Formación aplicada, con la vista puesta en el <em>siguiente desafío.</em></h2>
           </div>
           <div className="trajectory-grid">
@@ -500,7 +531,7 @@ export function Portfolio() {
         </section>
 
         <section className="section credentials-section">
-          <div className="section-marker reveal"><span>05</span> Certificaciones</div>
+          <div className="section-marker" data-section-marker><span>05</span> Certificaciones</div>
           <div className="credentials-grid">
             <article className="credential-card credential-card-english reveal">
               <div className="credential-media-frame credential-media-frame-english">
@@ -573,7 +604,7 @@ export function Portfolio() {
         <section className="contact-section" id="contacto">
           <div className="contact-layout">
             <div className="contact-copy reveal">
-              <p className="eyebrow"><span /> Contacto</p>
+              <p className="eyebrow section-marker" data-section-marker><span /> Contacto</p>
               <h2>¿Hablamos de lo que podemos <em>construir?</em></h2>
               <p>
                 Estoy abierto a conversar sobre prácticas curriculares, proyectos de

@@ -282,6 +282,17 @@ export function Portfolio() {
           {menuOpen ? <X size={21} /> : <Menu size={21} />}
         </button>
         <nav className={menuOpen ? "site-nav is-open" : "site-nav"} aria-label="Navegación principal">
+          <a
+            className="nav-cv-preview"
+            href={cvFile}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Abrir currículum de Gonzalo Pacheco Agredano"
+            data-tooltip="Ver CV"
+            onClick={closeMenu}
+          >
+            <Image src="/cv-navigation-preview.png" alt="" width={34} height={40} sizes="34px" />
+          </a>
           {navigation.map(([label, id]) => (
             <a href={`#${id}`} key={id} onClick={closeMenu}>
               {label}

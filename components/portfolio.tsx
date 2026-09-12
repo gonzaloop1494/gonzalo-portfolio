@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  ArrowDownRight,
   ArrowUpRight,
   BarChart3,
   BrainCircuit,
@@ -38,6 +37,28 @@ const navigation = [
   ["Proyectos", "proyectos"],
   ["Trayectoria", "trayectoria"],
   ["Contacto", "contacto"],
+] as const;
+
+const heroSpecialties = [
+  "Redes",
+  "Campos y radio",
+  "Comunicaciones por satélite",
+  "Radiocomunicaciones móviles",
+  "Simulaciones de comunicaciones",
+  "Comunicaciones de banda ancha",
+  "Señales",
+  "Sistemas",
+  "Electrónica",
+  "Programación",
+  "Radiación",
+  "Antenas",
+  "Sistemas digitales",
+  "Ensamblador",
+  "Software de sistemas",
+  "Linux",
+  "Procesamiento de señales",
+  "Microondas",
+  "Proyectos de telecomunicaciones",
 ] as const;
 
 const projects = [
@@ -226,22 +247,9 @@ export function Portfolio() {
         </div>
         <div className="hero-grid">
           <div className="hero-copy reveal is-visible">
-            <h1 className="hero-name">Gonzalo Pacheco Agredano</h1>
             <p className="hero-role">Ingeniero en Sistemas de Telecomunicación</p>
-            <p className="hero-specialties" aria-label="Áreas de especialización">
-              <span>Redes</span>
-              <span>Campos y radio</span>
-              <span>Comunicaciones por satélite</span>
-              <span>Radiocomunicaciones móviles</span>
-              <span>Simulaciones de comunicaciones</span>
-              <span>Comunicaciones de banda ancha</span>
-            </p>
-            <div className="hero-actions">
-              <a className="button button-primary" href="#proyectos">
-                Ver proyectos <ArrowDownRight size={18} />
-              </a>
-            </div>
           </div>
+          <h1 className="hero-name">Gonzalo Pacheco Agredano</h1>
           <div className="hero-aside reveal is-visible">
             <div className="hero-portrait-wrap">
               <div className="hero-line" />
@@ -264,6 +272,9 @@ export function Portfolio() {
               </p>
             </div>
           </div>
+          <p className="hero-specialties" aria-label="Áreas de especialización">
+            {heroSpecialties.map((specialty) => <span key={specialty}>{specialty}</span>)}
+          </p>
         </div>
         <a className="scroll-cue" href="#perfil">
           <span>Desplazar</span> <ChevronDown size={18} />

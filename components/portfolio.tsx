@@ -23,6 +23,7 @@ import {
   Satellite,
   X,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -127,18 +128,86 @@ const projects = [
   },
 ];
 
-const skillGroups = [
+type SkillGroup = {
+  label: string;
+  description: string;
+  icon: LucideIcon;
+  items: Array<{ label: string; featured?: boolean }>;
+};
+
+const skillGroups: SkillGroup[] = [
   {
     label: "Telecomunicaciones",
-    items: ["5G / 6G", "RAN / Core", "Network slicing", "Satcom GEO / LEO", "RF & microondas", "Fibra óptica"],
+    description: "Acceso radio, transporte y core",
+    icon: Radio,
+    items: [
+      { label: "5G / 6G", featured: true },
+      { label: "RAN / Core", featured: true },
+      { label: "Network slicing", featured: true },
+      { label: "Satcom GEO / LEO", featured: true },
+      { label: "RF & microondas", featured: true },
+      { label: "Fibra óptica", featured: true },
+      { label: "RAN slicing" },
+      { label: "Comunicaciones móviles" },
+      { label: "Tecnología de fibra óptica" },
+      { label: "Redes de fibra óptica" },
+      { label: "VLAN" },
+      { label: "BGP" },
+      { label: "Open Shortest Path First (OSPF)" },
+      { label: "Wireshark" },
+      { label: "Núcleo de 5G" },
+      { label: "LTE" },
+      { label: "Red de acceso radioterrestre UMTS" },
+      { label: "Sistema global para las comunicaciones móviles" },
+      { label: "4G" },
+      { label: "3GPP" },
+      { label: "3G" },
+      { label: "2G" },
+      { label: "Satélite de comunicaciones" },
+      { label: "RAN" },
+      { label: "Radiofrecuencia (RF)" },
+      { label: "Antenas" },
+    ],
   },
   {
     label: "Software & datos",
-    items: ["MATLAB", "Python", "Rust", "C", "Django", "APIs REST"],
+    description: "Código, herramientas y protocolos",
+    icon: Code2,
+    items: [
+      { label: "MATLAB", featured: true },
+      { label: "Python", featured: true },
+      { label: "Rust", featured: true },
+      { label: "C", featured: true },
+      { label: "Django", featured: true },
+      { label: "APIs REST", featured: true },
+      { label: "Simulink" },
+      { label: "Lenguaje ensamblador" },
+      { label: "Protocolo de transferencia de hipertexto (HTTP)" },
+      { label: "Programación en C" },
+      { label: "VHDL" },
+      { label: "Microsoft Office" },
+      { label: "Programación orientada a objetos (POO)" },
+      { label: "Pascal" },
+      { label: "Microsoft Excel" },
+    ],
   },
   {
     label: "Análisis técnico",
-    items: ["PCA / LRC", "BER & throughput", "Modelado de canal", "PDF / CDF", "KPIs", "Git / GitHub"],
+    description: "Modelado, medida y electrónica",
+    icon: BarChart3,
+    items: [
+      { label: "PCA / LRC", featured: true },
+      { label: "BER & throughput", featured: true },
+      { label: "Modelado de canal", featured: true },
+      { label: "PDF / CDF", featured: true },
+      { label: "KPIs", featured: true },
+      { label: "Git / GitHub", featured: true },
+      { label: "Filtros analógicos" },
+      { label: "Filtros digitales" },
+      { label: "LTSpice" },
+      { label: "Osciloscopio" },
+      { label: "Electrónica digital" },
+    ],
   },
 ];
 
@@ -506,19 +575,44 @@ export function Portfolio() {
           </div>
         </section>
 
-        <section className="section skills-section">
+        <section className="section skills-section" id="habilidades" aria-labelledby="skills-title">
           <div className="skills-layout">
             <div className="skills-heading reveal">
               <div className="section-marker" data-section-marker><span>03</span> Habilidades</div>
-              <h2>Herramientas para <em>analizar, medir y construir.</em></h2>
+              <h2 id="skills-title">Herramientas para <em>analizar, medir y construir.</em></h2>
             </div>
-            <div className="skill-groups">
-              {skillGroups.map((group) => (
-                <article className="skill-group reveal" key={group.label}>
-                  <h3>{group.label}</h3>
-                  <div>{group.items.map((item) => <span key={item}>{item}</span>)}</div>
-                </article>
-              ))}
+            <div className="skill-groups" aria-label="Aptitudes técnicas">
+              {skillGroups.map((group, groupIndex) => {
+                const Icon = group.icon;
+
+                return (
+                  <article
+                    className="skill-group reveal"
+                    key={group.label}
+                    style={{ animationDelay: `${groupIndex * 80}ms` }}
+                  >
+                    <header className="skill-group-heading">
+                      <span className="skill-group-index" aria-hidden="true">0{groupIndex + 1}</span>
+                      <span className="skill-group-icon" aria-hidden="true"><Icon size={19} strokeWidth={1.55} /></span>
+                      <div>
+                        <h3>{group.label}</h3>
+                        <p>{group.description}</p>
+                      </div>
+                    </header>
+                    <ul className="skill-list" aria-label={`Aptitudes de ${group.label}`}>
+                      {group.items.map((item, itemIndex) => (
+                        <li
+                          className={item.featured ? "skill-pill is-featured" : "skill-pill"}
+                          key={item.label}
+                          style={{ animationDelay: `${140 + itemIndex * 28}ms` }}
+                        >
+                          {item.label}
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                );
+              })}
             </div>
           </div>
         </section>

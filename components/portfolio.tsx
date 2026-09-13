@@ -666,15 +666,21 @@ export function Portfolio() {
                 >
                   Ver apuntes en Wuolah <ExternalLink size={15} />
                 </a>
-                <a
-                  className="timeline-link"
-                  href="https://servicios.urjc.es/listadoprofesorado/itinerario-formativo"
+                <form
+                  className="timeline-link-form"
+                  action="https://servicios.urjc.es/listadoprofesorado/itinerario-formativo"
+                  method="post"
                   target="_blank"
-                  rel="noreferrer"
-                  aria-label="Abrir el itinerario formativo del grado en la Universidad Rey Juan Carlos"
                 >
-                  Itinerario del Grado <ExternalLink size={15} />
-                </a>
+                  <input type="hidden" name="opcionescarrera" value="2501181#PRESENCIAL#2040" />
+                  <button
+                    className="timeline-link"
+                    type="submit"
+                    aria-label="Abrir el itinerario formativo del grado en la Universidad Rey Juan Carlos"
+                  >
+                    Itinerario del Grado <ExternalLink size={15} />
+                  </button>
+                </form>
               </div>
             </article>
             <Link

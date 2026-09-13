@@ -168,13 +168,17 @@ const skillGroups: SkillGroup[] = [
       { label: "3G" },
       { label: "2G" },
       { label: "Satélite de comunicaciones" },
-      { label: "RAN" },
       { label: "Radiofrecuencia (RF)" },
       { label: "Antenas" },
+      { label: "Microondas" },
+      { label: "WiMAX" },
+      { label: "WiFi" },
+      { label: "Bluetooth" },
+      { label: "IoT" },
     ],
   },
   {
-    label: "Software & datos",
+    label: "Software y datos",
     description: "Código, herramientas y protocolos",
     icon: Code2,
     image: "/skills-software-data.png",
@@ -191,14 +195,15 @@ const skillGroups: SkillGroup[] = [
       { label: "Protocolo de transferencia de hipertexto (HTTP)" },
       { label: "Programación en C" },
       { label: "VHDL" },
-      { label: "Microsoft Office" },
       { label: "Programación orientada a objetos (POO)" },
       { label: "Pascal" },
       { label: "Microsoft Excel" },
+      { label: "Xirio Online" },
+      { label: "Linux" },
     ],
   },
   {
-    label: "Análisis técnico",
+    label: "Análisis técnico de datos",
     description: "Modelado, medida y electrónica",
     icon: BarChart3,
     image: "/skills-analysis.png",
@@ -215,6 +220,8 @@ const skillGroups: SkillGroup[] = [
       { label: "LTSpice" },
       { label: "Osciloscopio" },
       { label: "Electrónica digital" },
+      { label: "Machine Learning" },
+      { label: "SVM" },
     ],
   },
 ];
@@ -588,7 +595,7 @@ export function Portfolio() {
             <div className="skills-intro-inner reveal">
               <div className="section-marker" data-section-marker><span>03</span> Habilidades</div>
               <h2 id="skills-title">Habilidades</h2>
-              <p>Tecnologías y áreas en las que trabajo.</p>
+              <p>Aptitudes que he ido adquiriendo y tecnologías/herramientas con las que he trabajado.</p>
             </div>
           </div>
           <div className="skills-grid" aria-label="Aptitudes técnicas">

@@ -261,7 +261,7 @@ h1 em, h2 em { color: var(--accent); font-family: Georgia, "Times New Roman", se
 .project-link:hover { color: var(--accent-strong); }
 
 .skills-section { max-width: none; padding: 0 0 clamp(5rem, 10vw, 8rem); background: var(--navy-950); }
-.skills-intro { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--navy-800); }
+.skills-intro { border-top: 1px solid var(--line); background: var(--navy-950); }
 .skills-intro-inner { max-width: 1440px; padding: clamp(3.8rem, 7vw, 5.8rem) clamp(1.3rem, 6vw, 6rem); margin: 0 auto; }
 .skills-intro h2 { margin: .85rem 0 0; color: var(--text); font-size: clamp(2.7rem, 5vw, 4.8rem); line-height: .95; }
 .skills-intro p { margin: .75rem 0 0; color: var(--soft); font-size: clamp(.95rem, 1.25vw, 1.15rem); font-weight: 700; }

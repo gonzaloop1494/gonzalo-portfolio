@@ -132,6 +132,8 @@ type SkillGroup = {
   label: string;
   description: string;
   icon: LucideIcon;
+  image: string;
+  imageAlt: string;
   items: Array<{ label: string; featured?: boolean }>;
 };
 
@@ -140,6 +142,8 @@ const skillGroups: SkillGroup[] = [
     label: "Telecomunicaciones",
     description: "Acceso radio, transporte y core",
     icon: Radio,
+    image: "/skills-telecom.png",
+    imageAlt: "Torre de telecomunicaciones conectada con una red de radio y satélite",
     items: [
       { label: "5G / 6G", featured: true },
       { label: "RAN / Core", featured: true },
@@ -173,6 +177,8 @@ const skillGroups: SkillGroup[] = [
     label: "Software & datos",
     description: "Código, herramientas y protocolos",
     icon: Code2,
+    image: "/skills-software-data.png",
+    imageAlt: "Entorno de software con terminal, datos y señales",
     items: [
       { label: "MATLAB", featured: true },
       { label: "Python", featured: true },
@@ -195,6 +201,8 @@ const skillGroups: SkillGroup[] = [
     label: "Análisis técnico",
     description: "Modelado, medida y electrónica",
     icon: BarChart3,
+    image: "/skills-analysis.png",
+    imageAlt: "Instrumentación de laboratorio para analizar señales y electrónica",
     items: [
       { label: "PCA / LRC", featured: true },
       { label: "BER & throughput", featured: true },
@@ -576,44 +584,56 @@ export function Portfolio() {
         </section>
 
         <section className="section skills-section" id="habilidades" aria-labelledby="skills-title">
-          <div className="skills-layout">
-            <div className="skills-heading reveal">
+          <div className="skills-intro">
+            <div className="skills-intro-inner reveal">
               <div className="section-marker" data-section-marker><span>03</span> Habilidades</div>
-              <h2 id="skills-title">Herramientas para <em>analizar, medir y construir.</em></h2>
+              <h2 id="skills-title">Habilidades</h2>
+              <p>Tecnologías y áreas en las que trabajo.</p>
             </div>
-            <div className="skill-groups" aria-label="Aptitudes técnicas">
-              {skillGroups.map((group, groupIndex) => {
-                const Icon = group.icon;
+          </div>
+          <div className="skills-grid" aria-label="Aptitudes técnicas">
+            {skillGroups.map((group, groupIndex) => {
+              const Icon = group.icon;
+              const featuredItems = group.items.filter((item) => item.featured);
+              const additionalItems = group.items.filter((item) => !item.featured);
 
-                return (
-                  <article
-                    className="skill-group reveal"
-                    key={group.label}
-                    style={{ animationDelay: `${groupIndex * 80}ms` }}
-                  >
-                    <header className="skill-group-heading">
-                      <span className="skill-group-index" aria-hidden="true">0{groupIndex + 1}</span>
-                      <span className="skill-group-icon" aria-hidden="true"><Icon size={19} strokeWidth={1.55} /></span>
-                      <div>
-                        <h3>{group.label}</h3>
-                        <p>{group.description}</p>
-                      </div>
-                    </header>
-                    <ul className="skill-list" aria-label={`Aptitudes de ${group.label}`}>
-                      {group.items.map((item, itemIndex) => (
-                        <li
-                          className={item.featured ? "skill-pill is-featured" : "skill-pill"}
-                          key={item.label}
-                          style={{ animationDelay: `${140 + itemIndex * 28}ms` }}
-                        >
-                          {item.label}
-                        </li>
-                      ))}
+              return (
+                <article
+                  className="skill-card reveal"
+                  key={group.label}
+                  style={{ animationDelay: `${groupIndex * 80}ms` }}
+                >
+                  <div className="skill-card-media">
+                    <Image
+                      src={group.image}
+                      alt={group.imageAlt}
+                      fill
+                      sizes="(max-width: 700px) calc(100vw - 2.6rem), (max-width: 1100px) calc(50vw - 2.5rem), 30vw"
+                    />
+                  </div>
+                  <div className="skill-card-body">
+                    <div className="skill-card-topline">
+                      <span className="skill-card-index" aria-hidden="true">0{groupIndex + 1}</span>
+                      <span className="skill-card-icon" aria-hidden="true"><Icon size={18} strokeWidth={1.6} /></span>
+                    </div>
+                    <h3>{group.label}</h3>
+                    <p>{group.description}</p>
+                    <ul className="skill-card-featured" aria-label={`Habilidades principales de ${group.label}`}>
+                      {featuredItems.map((item) => <li key={item.label}>{item.label}</li>)}
                     </ul>
-                  </article>
-                );
-              })}
-            </div>
+                    <details className="skill-card-more">
+                      <summary>
+                        <span>Ver {additionalItems.length} aptitudes</span>
+                        <ChevronDown size={17} strokeWidth={1.8} aria-hidden="true" />
+                      </summary>
+                      <ul className="skill-list" aria-label={`Más aptitudes de ${group.label}`}>
+                        {additionalItems.map((item) => <li key={item.label}>{item.label}</li>)}
+                      </ul>
+                    </details>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </section>
 

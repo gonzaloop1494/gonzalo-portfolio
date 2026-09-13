@@ -802,7 +802,7 @@ export function Portfolio() {
               <p className="eyebrow section-marker" data-section-marker><span /> Contacto</p>
               <h2>¿Te apetece hablar conmigo sobre algún proyecto o idea?</h2>
               <p>
-                Estoy abierto a conversar acerca de cualquier proyecto que se me proponga a participar o colaborar relacionado con mis temas de interés mencionados previamente. También estoy disponible para hablar de cualquier oportunidad de trabajo o proyecto del que pueda formar parte, así como cualquier duda o pregunta acerca de mí o de mi trabajo a la que pueda aportar valor mutuo.
+                Estoy abierto a conversar acerca de cualquier proyecto que se me proponga a participar o colaborar relacionado con mis temas de interés mencionados previamente. También estoy disponible para hablar de cualquier oportunidad de trabajo o proyecto del que pueda formar parte, así como cualquier duda o pregunta acerca de mí o de mi trabajo a la que pueda aportar personalmente algún valor.
               </p>
               <div className="social-links">
                 <a href={`mailto:${email}`}><Mail size={18} /> {email}</a>

@@ -299,6 +299,8 @@ h1 em, h2 em { color: var(--accent); font-family: Georgia, "Times New Roman", se
 .timeline-card h3 { margin-bottom: .65rem; font-size: 1.3rem; line-height: 1.12; }
 .timeline-card > p { color: var(--muted); font-size: .9rem; line-height: 1.6; }
 .timeline-card .timeline-note { margin: 1.1rem 0 0; color: var(--soft); font-size: .76rem; font-weight: 700; }
+.timeline-links { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: auto; }
+.timeline-links .timeline-link { margin-top: 0; }
 .timeline-link { display: inline-flex; align-items: center; gap: .35rem; width: fit-content; min-height: 34px; margin-top: auto; padding: .45rem .6rem; border: 1px solid var(--line); color: var(--accent); font-size: .72rem; font-weight: 800; }
 .timeline-link:hover { border-color: var(--accent); background: var(--accent); color: var(--navy-950); }
 .timeline-card-tfg { padding: 0; overflow: hidden; border-color: rgba(98, 223, 210, .5); transition: border-color .25s ease, background-color .25s ease, transform .25s ease; }

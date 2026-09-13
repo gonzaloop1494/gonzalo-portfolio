@@ -800,7 +800,7 @@ export function Portfolio() {
           <div className="contact-layout">
             <div className="contact-copy reveal">
               <p className="eyebrow section-marker" data-section-marker><span /> Contacto</p>
-              <h2>¿Te apetece hablar o colaborar conmigo en algún proyecto o idea?</h2>
+              <h2>¿Te apetece hablar conmigo sobre algún proyecto o idea?</h2>
               <p>
                 Estoy abierto a conversar acerca de cualquier proyecto que se me proponga a participar o colaborar relacionado con mis temas de interés mencionados previamente. También estoy disponible para hablar de cualquier oportunidad de trabajo o proyecto del que pueda formar parte, así como cualquier duda o pregunta acerca de mí o de mi trabajo a la que pueda aportar valor mutuo.
               </p>

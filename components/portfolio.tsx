@@ -76,6 +76,8 @@ const projects = [
     type: "Telecom",
     href: "https://github.com/gonzaloop1494/tdma-network-simulation",
     icon: BarChart3,
+    image: "/project-tdma-network.png",
+    imageAlt: "Visualización de una red TDMA con estación base, nodos y franjas temporales de transmisión",
   },
   {
     title: "GameRank",
@@ -86,6 +88,8 @@ const projects = [
     type: "Software",
     href: "https://github.com/gonzaloop1494/gamerank-django",
     icon: Code2,
+    image: "/project-gamerank.png",
+    imageAlt: "Visualización de una plataforma web de ranking de videojuegos conectada con servicios de datos",
   },
   {
     title: "Groupchat TCP",
@@ -96,6 +100,8 @@ const projects = [
     type: "Software",
     href: "https://github.com/gonzaloop1494/groupchat-rust",
     icon: Network,
+    image: "/project-groupchat-tcp.png",
+    imageAlt: "Visualización de un servidor de mensajería TCP conectado con clientes y flujos concurrentes",
   },
   {
     title: "Satcom & radionavegación",
@@ -106,6 +112,8 @@ const projects = [
     type: "Telecom",
     href: "https://github.com/gonzaloop1494/comunicaciones_satelitales_y_radionavegacion",
     icon: Radio,
+    image: "/project-satcom-radionavigation.png",
+    imageAlt: "Visualización de satélites y una estación terrestre conectados mediante haces de comunicaciones",
   },
   {
     title: "Reconocimiento facial con PCA",
@@ -116,6 +124,8 @@ const projects = [
     type: "Datos",
     href: "https://github.com/gonzaloop1494/facial-recognition-with-PCA",
     icon: BrainCircuit,
+    image: "/project-pca-face-recognition.png",
+    imageAlt: "Visualización de un rostro sintético analizado mediante componentes principales y datos geométricos",
   },
   {
     title: "Energy as a Service",
@@ -126,6 +136,8 @@ const projects = [
     type: "Telecom",
     href: "https://github.com/gonzaloop1494/energy-as-a-service-madrid",
     icon: BriefcaseBusiness,
+    image: "/project-energy-as-a-service.png",
+    imageAlt: "Visualización de un edificio residencial conectado con sensores IoT, climatización y gestión energética",
   },
 ];
 
@@ -591,19 +603,29 @@ export function Portfolio() {
               const Icon = project.icon;
               return (
                 <article className="project-card reveal" key={project.title} style={{ animationDelay: `${index * 45}ms` }}>
-                  <div className="project-topline">
-                    <Icon size={23} strokeWidth={1.5} />
-                    <span>{project.type}</span>
+                  <div className="project-media">
+                    <Image
+                      src={project.image}
+                      alt={project.imageAlt}
+                      fill
+                      sizes="(max-width: 580px) 100vw, (max-width: 880px) 50vw, 33vw"
+                    />
                   </div>
-                  <p className="project-kicker">{project.kicker}</p>
-                  <h3>{project.title}</h3>
-                  <p className="project-description">{project.description}</p>
-                  <ul className="tag-list" aria-label={`Tecnologías de ${project.title}`}>
-                    {project.tags.map((tag) => <li key={tag}>{tag}</li>)}
-                  </ul>
-                  <a className="project-link" href={project.href} target="_blank" rel="noreferrer">
-                    Ver repositorio <ArrowUpRight size={18} />
-                  </a>
+                  <div className="project-card-body">
+                    <div className="project-topline">
+                      <Icon size={23} strokeWidth={1.5} />
+                      <span>{project.type}</span>
+                    </div>
+                    <p className="project-kicker">{project.kicker}</p>
+                    <h3>{project.title}</h3>
+                    <p className="project-description">{project.description}</p>
+                    <ul className="tag-list" aria-label={`Tecnologías de ${project.title}`}>
+                      {project.tags.map((tag) => <li key={tag}>{tag}</li>)}
+                    </ul>
+                    <a className="project-link" href={project.href} target="_blank" rel="noreferrer">
+                      Ver repositorio <ArrowUpRight size={18} />
+                    </a>
+                  </div>
                 </article>
               );
             })}

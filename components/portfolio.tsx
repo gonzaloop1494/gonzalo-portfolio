@@ -511,39 +511,58 @@ export function Portfolio() {
                 Consultar CV detallado <ArrowUpRight size={17} />
               </a>
             </div>
-            <aside className="profile-data-card reveal" aria-label="Datos de perfil">
-              <p className="profile-data-heading">Datos</p>
-              <dl className="profile-data-list">
-                <div>
-                  <MapPin size={20} strokeWidth={1.6} />
+            <div className="profile-sidebar reveal">
+              <aside className="profile-data-card" aria-label="Datos de perfil">
+                <p className="profile-data-heading">Datos</p>
+                <dl className="profile-data-list">
                   <div>
-                    <dt>Ubicación</dt>
-                    <dd>Leganés, Madrid</dd>
+                    <MapPin size={20} strokeWidth={1.6} />
+                    <div>
+                      <dt>Ubicación</dt>
+                      <dd>Leganés, Madrid</dd>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <GraduationCap size={20} strokeWidth={1.6} />
                   <div>
-                    <dt>Formación</dt>
-                    <dd>URJC · Ingeniería de Telecomunicación</dd>
+                    <GraduationCap size={20} strokeWidth={1.6} />
+                    <div>
+                      <dt>Formación</dt>
+                      <dd>URJC · Ingeniería de Telecomunicación</dd>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <Network size={20} strokeWidth={1.6} />
                   <div>
-                    <dt>Perfil</dt>
-                    <dd>Radiocomunicaciones móviles, antenas, simulaciones, KPIs y programación</dd>
+                    <Network size={20} strokeWidth={1.6} />
+                    <div>
+                      <dt>Perfil</dt>
+                      <dd>Radiocomunicaciones móviles, antenas, simulaciones, KPIs y programación</dd>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <Radio size={20} strokeWidth={1.6} />
                   <div>
-                    <dt>Intereses</dt>
-                    <dd>5G/6G, satélite, red y datos</dd>
+                    <Radio size={20} strokeWidth={1.6} />
+                    <div>
+                      <dt>Intereses</dt>
+                      <dd>5G/6G, satélite, red y datos</dd>
+                    </div>
                   </div>
-                </div>
-              </dl>
-            </aside>
+                </dl>
+              </aside>
+              <section className="profile-personal-card" aria-labelledby="personal-profile-heading">
+                <h3 className="profile-data-heading" id="personal-profile-heading">Sobre mí como persona</h3>
+                <p>
+                  Soy una persona muy responsable, metódico y autoexigente. Me desenvuelvo bien
+                  trabajando con otras personas, me gusta tomar la iniciativa, siempre intentando
+                  aprender escuchando, observando y preguntando por aquello que no sepa o entienda.
+                </p>
+                <p>
+                  Me apasionan las innovaciones tecnológicas, sobre todo poder aportar en el avance
+                  de las telecomunicaciones. Hoy en día vivimos en una sociedad que demanda una alta
+                  tasa de datos, baja latencia y una alta fiabilidad. He aprendido durante estos años
+                  en el grado a desarrollar un pensamiento estructurado, aprendiendo y entendiendo
+                  cada paso que hago. Me tomo muy en serio todo lo que hago y tengo mucha ilusión por
+                  seguir aprendiendo cada día. Quiero aplicar en un entorno real la base académica
+                  adquirida.
+                </p>
+              </section>
+            </div>
           </div>
         </section>
 

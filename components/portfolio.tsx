@@ -39,6 +39,7 @@ const navigation = [
   ["Perfil", "perfil"],
   ["Proyectos", "proyectos"],
   ["Trayectoria", "trayectoria"],
+  ["Certificaciones", "certificaciones"],
   ["Contacto", "contacto"],
 ] as const;
 
@@ -731,7 +732,7 @@ export function Portfolio() {
           </div>
         </section>
 
-        <section className="section credentials-section">
+        <section className="section credentials-section" id="certificaciones">
           <div className="section-marker" data-section-marker><span>05</span> Certificaciones</div>
           <div className="credentials-grid">
             <article className="credential-card credential-card-english reveal">

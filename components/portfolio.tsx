@@ -9,7 +9,6 @@ import {
   ChevronDown,
   CircleCheck,
   Code2,
-  Download,
   ExternalLink,
   Github,
   GitFork,
@@ -520,27 +519,6 @@ export function Portfolio() {
                   <div>{group.items.map((item) => <span key={item}>{item}</span>)}</div>
                 </article>
               ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section cv-section" id="cv">
-          <div className="cv-panel reveal">
-            <div>
-              <p className="eyebrow"><span /> Currículum</p>
-              <h2>Todo el recorrido, en una página.</h2>
-              <p>
-                Formación, proyectos, experiencia de laboratorio e idiomas en un CV general
-                preparado para compartir con empresas.
-              </p>
-            </div>
-            <div className="cv-actions">
-              <a className="button button-light" href={cvFile} target="_blank" rel="noreferrer">
-                Ver CV <ExternalLink size={17} />
-              </a>
-              <a className="icon-button" href={cvFile} download aria-label="Descargar CV">
-                <Download size={20} />
-              </a>
             </div>
           </div>
         </section>

@@ -269,18 +269,6 @@ h1 em, h2 em { color: var(--accent); font-family: Georgia, "Times New Roman", se
 .skill-group div { display: flex; flex-wrap: wrap; gap: .45rem; }
 .skill-group span { padding: .35rem .55rem; border: 1px solid var(--line); color: var(--soft); font-size: .78rem; }
 
-.cv-section { max-width: none; padding: 0; }
-.cv-panel { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; max-width: 1440px; min-height: 330px; margin: 0 auto; padding: clamp(3rem, 7vw, 6rem); background: var(--navy-700); color: var(--text); }
-.cv-panel .eyebrow { color: var(--accent); }
-.cv-panel .eyebrow span { background: var(--accent); }
-.cv-panel h2 { max-width: 620px; margin-bottom: .85rem; font-size: clamp(2.3rem, 4vw, 4.1rem); line-height: 1.05; }
-.cv-panel p:not(.eyebrow) { max-width: 570px; margin-bottom: 0; color: var(--muted); }
-.cv-actions { display: flex; align-items: center; gap: .7rem; flex: 0 0 auto; }
-.button-light { background: var(--accent); color: var(--navy-950); }
-.button-light:hover { background: var(--accent-strong); }
-.icon-button { display: grid; width: 46px; height: 46px; place-items: center; border: 1px solid var(--line); color: var(--text); }
-.icon-button:hover { border-color: var(--accent); color: var(--accent); }
-
 .trajectory-section { padding-top: clamp(5rem, 11vw, 9rem); }
 .trajectory-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 3rem; }
 .timeline-card { display: flex; flex-direction: column; min-height: 305px; padding: 1.7rem; border: 1px solid var(--line); background: var(--navy-900); }
@@ -526,7 +514,6 @@ h1 em, h2 em { color: var(--accent); font-family: Georgia, "Times New Roman", se
   .tfg-hero-aside { max-width: 620px; }
   .tfg-hero-image-frame { aspect-ratio: 16 / 9; }
   .tfg-focus-grid, .tfg-bibliography-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .cv-panel { align-items: flex-start; flex-direction: column; min-height: unset; }
   .credentials-section { padding-top: 5rem; }
 }
 
@@ -544,8 +531,6 @@ h1 em, h2 em { color: var(--accent); font-family: Georgia, "Times New Roman", se
   .project-grid { grid-template-columns: 1fr; }
   .project-card { min-height: 330px; }
   .skill-group { grid-template-columns: 1fr; gap: .75rem; }
-  .cv-actions { width: 100%; }
-  .button-light { flex: 1; }
   .form-grid { grid-template-columns: 1fr; }
   .contact-copy h2 { font-size: clamp(2.6rem, 14vw, 3.8rem); }
   .site-footer { flex-direction: column; }

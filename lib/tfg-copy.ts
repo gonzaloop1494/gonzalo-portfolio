@@ -94,7 +94,7 @@ type TfgCopy = {
 export const tfgCopy: Record<Locale, TfgCopy> = {
   es: {
     metadata: {
-      title: "Píldora del TFG | Gonzalo Pacheco",
+      title: "Píldora del TFG | Gonzalo Pacheco Agredano",
       description:
         "Píldora del Trabajo Fin de Grado de Gonzalo Pacheco Agredano sobre escenarios Cell-Free asistidos por RIS.",
     },
@@ -285,7 +285,7 @@ export const tfgCopy: Record<Locale, TfgCopy> = {
   },
   en: {
     metadata: {
-      title: "Bachelor's Thesis Overview | Gonzalo Pacheco",
+      title: "Bachelor's Thesis Overview | Gonzalo Pacheco Agredano",
       description:
         "Bachelor's Thesis overview by Gonzalo Pacheco Agredano on RIS-assisted Cell-Free scenarios.",
     },
@@ -476,7 +476,7 @@ export const tfgCopy: Record<Locale, TfgCopy> = {
   },
   fr: {
     metadata: {
-      title: "Aperçu du projet de fin d'études | Gonzalo Pacheco",
+      title: "Aperçu du projet de fin d'études | Gonzalo Pacheco Agredano",
       description:
         "Aperçu du projet de fin d'études de Gonzalo Pacheco Agredano sur des scénarios Cell-Free assistés par RIS.",
     },
@@ -667,7 +667,7 @@ export const tfgCopy: Record<Locale, TfgCopy> = {
   },
   de: {
     metadata: {
-      title: "Überblick zur Bachelorarbeit | Gonzalo Pacheco",
+      title: "Überblick zur Bachelorarbeit | Gonzalo Pacheco Agredano",
       description:
         "Überblick zur Bachelorarbeit von Gonzalo Pacheco Agredano über RIS-gestützte Cell-Free-Szenarien.",
     },

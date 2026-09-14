@@ -169,7 +169,7 @@ type PortfolioCopy = {
 export const portfolioCopy: Record<Locale, PortfolioCopy> = {
   es: {
     metadata: {
-      title: "Gonzalo Pacheco | Telecomunicaciones",
+      title: "Gonzalo Pacheco Agredano | Telecomunicaciones",
       description:
         "Portfolio de Gonzalo Pacheco Agredano: redes móviles, comunicaciones satelitales, análisis de rendimiento y software.",
     },
@@ -456,7 +456,7 @@ export const portfolioCopy: Record<Locale, PortfolioCopy> = {
   },
   en: {
     metadata: {
-      title: "Gonzalo Pacheco | Telecommunications",
+      title: "Gonzalo Pacheco Agredano | Telecommunications",
       description:
         "Portfolio of Gonzalo Pacheco Agredano: mobile networks, satellite communications, performance analysis and software.",
     },
@@ -743,7 +743,7 @@ export const portfolioCopy: Record<Locale, PortfolioCopy> = {
   },
   fr: {
     metadata: {
-      title: "Gonzalo Pacheco | Télécommunications",
+      title: "Gonzalo Pacheco Agredano | Télécommunications",
       description:
         "Portfolio de Gonzalo Pacheco Agredano : réseaux mobiles, communications par satellite, analyse des performances et logiciels.",
     },
@@ -1030,7 +1030,7 @@ export const portfolioCopy: Record<Locale, PortfolioCopy> = {
   },
   de: {
     metadata: {
-      title: "Gonzalo Pacheco | Telekommunikation",
+      title: "Gonzalo Pacheco Agredano | Telekommunikation",
       description:
         "Portfolio von Gonzalo Pacheco Agredano: Mobilfunknetze, Satellitenkommunikation, Leistungsanalyse und Software.",
     },

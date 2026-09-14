@@ -73,7 +73,7 @@ type PracticesCopy = {
 export const practicesCopy: Record<Locale, PracticesCopy> = {
   es: {
     metadata: {
-      title: "Píldora de prácticas | Gonzalo Pacheco",
+      title: "Píldora de prácticas | Gonzalo Pacheco Agredano",
       description:
         "Píldora de las prácticas curriculares de Gonzalo Pacheco Agredano en NTT DATA Spain.",
     },
@@ -171,7 +171,7 @@ export const practicesCopy: Record<Locale, PracticesCopy> = {
   },
   en: {
     metadata: {
-      title: "Internship overview | Gonzalo Pacheco",
+      title: "Internship overview | Gonzalo Pacheco Agredano",
       description:
         "Overview of Gonzalo Pacheco Agredano's curricular internship at NTT DATA Spain.",
     },
@@ -269,7 +269,7 @@ export const practicesCopy: Record<Locale, PracticesCopy> = {
   },
   fr: {
     metadata: {
-      title: "Aperçu du stage | Gonzalo Pacheco",
+      title: "Aperçu du stage | Gonzalo Pacheco Agredano",
       description:
         "Aperçu du stage universitaire de Gonzalo Pacheco Agredano chez NTT DATA Spain.",
     },
@@ -367,7 +367,7 @@ export const practicesCopy: Record<Locale, PracticesCopy> = {
   },
   de: {
     metadata: {
-      title: "Praktikumsüberblick | Gonzalo Pacheco",
+      title: "Praktikumsüberblick | Gonzalo Pacheco Agredano",
       description:
         "Überblick über das curricular integrierte Praktikum von Gonzalo Pacheco Agredano bei NTT DATA Spain.",
     },

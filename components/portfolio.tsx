@@ -7,6 +7,8 @@ import {
   BookOpen,
   BriefcaseBusiness,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   CircleCheck,
   Code2,
   ExternalLink,
@@ -17,6 +19,7 @@ import {
   Linkedin,
   Mail,
   MapPin,
+  Maximize2,
   Menu,
   Network,
   Radio,
@@ -26,7 +29,7 @@ import {
 import type { LucideIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ContactForm } from "./contact-form";
 import { NetworkMotion } from "./network-motion";
 
@@ -251,6 +254,217 @@ const profileInterests = [
 
 const filters = ["Todos", "Telecom", "Software", "Datos"] as const;
 type Filter = (typeof filters)[number];
+
+const formationPhotos = [
+  {
+    src: "/formacion/xirio-cobertura.jpeg",
+    alt: "Simulación de cobertura radioeléctrica en Xirio Online",
+    label: "Simulación de cobertura con Xirio Online",
+    orientation: "landscape",
+  },
+  {
+    src: "/formacion/antena-laboratorio.jpeg",
+    alt: "Antena en un laboratorio de telecomunicaciones",
+    label: "Medida de antenas en laboratorio",
+    orientation: "portrait",
+  },
+  {
+    src: "/formacion/analizador-vectorial.jpeg",
+    alt: "Analizador vectorial de redes mostrando una medida de parámetros S",
+    label: "Análisis de parámetros S",
+    orientation: "portrait",
+  },
+  {
+    src: "/formacion/antena-banda-ancha.jpeg",
+    alt: "Antena de banda ancha conectada a instrumentación de laboratorio",
+    label: "Caracterización de antenas",
+    orientation: "portrait",
+  },
+  {
+    src: "/formacion/medicion-multimetro.jpeg",
+    alt: "Multímetro midiendo un componente en una práctica de laboratorio",
+    label: "Mediciones electrónicas",
+    orientation: "portrait",
+  },
+  {
+    src: "/formacion/osciloscopio.jpeg",
+    alt: "Osciloscopio mostrando dos señales periódicas",
+    label: "Observación de señales",
+    orientation: "portrait",
+  },
+  {
+    src: "/formacion/simulacion-satelital.jpeg",
+    alt: "Simulación de órbitas y enlaces entre satélites GEO y LEO",
+    label: "Escenario de comunicaciones satelitales",
+    orientation: "landscape",
+  },
+  {
+    src: "/formacion/montaje-laboratorio.jpeg",
+    alt: "Montaje de laboratorio de radiocomunicaciones con instrumentación y antenas",
+    label: "Montaje de radiocomunicaciones",
+    orientation: "landscape",
+  },
+  {
+    src: "/formacion/esquema-django.jpeg",
+    alt: "Esquema de arquitectura de una aplicación Django",
+    label: "Arquitectura de aplicaciones web",
+    orientation: "landscape",
+  },
+  {
+    src: "/formacion/enlace-radio.jpeg",
+    alt: "Equipo Rocket M5 de Ubiquiti Networks para un enlace radio",
+    label: "Equipamiento para enlaces inalámbricos",
+    orientation: "portrait",
+  },
+] as const;
+
+function FormationCarousel() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const activePhoto = formationPhotos[activeIndex];
+
+  const showPrevious = useCallback(() => {
+    setActiveIndex((currentIndex) => (currentIndex + formationPhotos.length - 1) % formationPhotos.length);
+  }, []);
+
+  const showNext = useCallback(() => {
+    setActiveIndex((currentIndex) => (currentIndex + 1) % formationPhotos.length);
+  }, []);
+
+  useEffect(() => {
+    if (
+      isPaused ||
+      isLightboxOpen ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) return;
+
+    const intervalId = window.setInterval(showNext, 3000);
+    return () => window.clearInterval(intervalId);
+  }, [activeIndex, isLightboxOpen, isPaused, showNext]);
+
+  useEffect(() => {
+    if (!isLightboxOpen) return;
+
+    closeButtonRef.current?.focus();
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsLightboxOpen(false);
+      if (event.key === "ArrowLeft") showPrevious();
+      if (event.key === "ArrowRight") showNext();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isLightboxOpen, showNext, showPrevious]);
+
+  return (
+    <>
+      <div
+        className="formation-carousel"
+        role="region"
+        aria-roledescription="carrusel"
+        aria-label="Galería de formación universitaria"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        onFocusCapture={() => setIsPaused(true)}
+        onBlurCapture={() => setIsPaused(false)}
+      >
+        <button
+          className="formation-carousel-control formation-carousel-control-previous"
+          type="button"
+          onClick={showPrevious}
+          aria-label="Ver foto anterior"
+          title="Foto anterior"
+        >
+          <ChevronLeft size={20} strokeWidth={2} aria-hidden="true" />
+        </button>
+        <button
+          className="formation-carousel-image-button"
+          type="button"
+          onClick={() => setIsLightboxOpen(true)}
+          aria-label={`Ampliar foto ${activeIndex + 1} de ${formationPhotos.length}: ${activePhoto.label}`}
+          title="Ampliar fotografía"
+        >
+          <Image
+            key={activePhoto.src}
+            className="formation-carousel-image"
+            src={activePhoto.src}
+            alt={activePhoto.alt}
+            fill
+            sizes="(max-width: 880px) calc(100vw - 2.6rem), 30vw"
+          />
+          <span className="formation-carousel-zoom" aria-hidden="true"><Maximize2 size={17} strokeWidth={1.8} /></span>
+        </button>
+        <button
+          className="formation-carousel-control formation-carousel-control-next"
+          type="button"
+          onClick={showNext}
+          aria-label="Ver foto siguiente"
+          title="Foto siguiente"
+        >
+          <ChevronRight size={20} strokeWidth={2} aria-hidden="true" />
+        </button>
+        <div className="formation-carousel-caption" aria-hidden="true">
+          <span>{activePhoto.label}</span>
+          <span>{String(activeIndex + 1).padStart(2, "0")} / {String(formationPhotos.length).padStart(2, "0")}</span>
+        </div>
+      </div>
+
+      {isLightboxOpen && (
+        <div className="formation-lightbox" role="dialog" aria-modal="true" aria-label={`Foto ampliada: ${activePhoto.label}`} onClick={() => setIsLightboxOpen(false)}>
+          <div className="formation-lightbox-dialog" onClick={(event) => event.stopPropagation()}>
+            <div className="formation-lightbox-toolbar">
+              <span>{activePhoto.label}</span>
+              <button
+                ref={closeButtonRef}
+                className="formation-lightbox-close"
+                type="button"
+                onClick={() => setIsLightboxOpen(false)}
+                aria-label="Cerrar foto ampliada"
+                title="Cerrar"
+              >
+                <X size={20} strokeWidth={2} aria-hidden="true" />
+              </button>
+            </div>
+            <div className="formation-lightbox-stage">
+              <button
+                className="formation-lightbox-control"
+                type="button"
+                onClick={showPrevious}
+                aria-label="Ver foto anterior"
+                title="Foto anterior"
+              >
+                <ChevronLeft size={24} strokeWidth={2} aria-hidden="true" />
+              </button>
+              <div className={`formation-lightbox-media is-${activePhoto.orientation}`}>
+                <Image
+                  key={`lightbox-${activePhoto.src}`}
+                  className="formation-lightbox-image"
+                  src={activePhoto.src}
+                  alt={activePhoto.alt}
+                  fill
+                  sizes="(max-width: 700px) calc(100vw - 7rem), 980px"
+                />
+              </div>
+              <button
+                className="formation-lightbox-control"
+                type="button"
+                onClick={showNext}
+                aria-label="Ver foto siguiente"
+                title="Foto siguiente"
+              >
+                <ChevronRight size={24} strokeWidth={2} aria-hidden="true" />
+              </button>
+            </div>
+            <p>{activeIndex + 1} de {formationPhotos.length}</p>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
 
 export function Portfolio() {
   const [progress, setProgress] = useState(0);
@@ -692,37 +906,40 @@ export function Portfolio() {
             <h2 className="trajectory-heading">Formación, con la vista puesta en <em>siguientes desafíos.</em></h2>
           </div>
           <div className="trajectory-grid">
-            <article className="timeline-card reveal">
-              <div className="timeline-heading"><GraduationCap size={25} strokeWidth={1.5} /><span>Formación</span></div>
-              <p className="timeline-date">2022 - actualidad</p>
-              <h3>Grado en Ingeniería en Sistemas de Telecomunicación</h3>
-              <p>Universidad Rey Juan Carlos, Fuenlabrada. Finalización prevista: junio de 2027.</p>
-              <p className="timeline-note">Redes, radiocomunicaciones móviles, satélite, señales y software de sistemas.</p>
-              <div className="timeline-links">
-                <a
-                  className="timeline-link"
-                  href="https://wuolah.com/profile/gonzalo_pacheco"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Ver apuntes de Gonzalo Pacheco en Wuolah"
-                >
-                  Ver apuntes en Wuolah <ExternalLink size={15} />
-                </a>
-                <form
-                  className="timeline-link-form"
-                  action="https://servicios.urjc.es/listadoprofesorado/itinerario-formativo"
-                  method="post"
-                  target="_blank"
-                >
-                  <input type="hidden" name="opcionescarrera" value="2501181#PRESENCIAL#2040" />
-                  <button
+            <article className="timeline-card timeline-card-education reveal">
+              <FormationCarousel />
+              <div className="education-card-content">
+                <div className="timeline-heading"><GraduationCap size={25} strokeWidth={1.5} /><span>Formación</span></div>
+                <p className="timeline-date">2022 - actualidad</p>
+                <h3>Grado en Ingeniería en Sistemas de Telecomunicación</h3>
+                <p>Universidad Rey Juan Carlos, Fuenlabrada. Finalización prevista: junio de 2027.</p>
+                <p className="timeline-note">Redes, radiocomunicaciones móviles, satélite, señales y software de sistemas.</p>
+                <div className="timeline-links">
+                  <a
                     className="timeline-link"
-                    type="submit"
-                    aria-label="Abrir el itinerario formativo del grado en la Universidad Rey Juan Carlos"
+                    href="https://wuolah.com/profile/gonzalo_pacheco"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Ver apuntes de Gonzalo Pacheco en Wuolah"
                   >
-                    Itinerario del Grado <ExternalLink size={15} />
-                  </button>
-                </form>
+                    Ver apuntes en Wuolah <ExternalLink size={15} />
+                  </a>
+                  <form
+                    className="timeline-link-form"
+                    action="https://servicios.urjc.es/listadoprofesorado/itinerario-formativo"
+                    method="post"
+                    target="_blank"
+                  >
+                    <input type="hidden" name="opcionescarrera" value="2501181#PRESENCIAL#2040" />
+                    <button
+                      className="timeline-link"
+                      type="submit"
+                      aria-label="Abrir el itinerario formativo del grado en la Universidad Rey Juan Carlos"
+                    >
+                      Itinerario del Grado <ExternalLink size={15} />
+                    </button>
+                  </form>
+                </div>
               </div>
             </article>
             <Link

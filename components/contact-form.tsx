@@ -2,12 +2,16 @@
 
 import { LoaderCircle, Send } from "lucide-react";
 import { FormEvent, useState } from "react";
+import { contactCopy } from "@/lib/contact-copy";
+import { useLanguage } from "./language-provider";
 
 type FormStatus = "idle" | "sending" | "success" | "error";
 
 export function ContactForm() {
+  const { locale } = useLanguage();
+  const copy = contactCopy[locale];
   const [status, setStatus] = useState<FormStatus>("idle");
-  const [message, setMessage] = useState("");
+  const [errorCode, setErrorCode] = useState<string | null>(null);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -16,7 +20,7 @@ export function ContactForm() {
     const values = Object.fromEntries(formData.entries());
 
     setStatus("sending");
-    setMessage("");
+    setErrorCode(null);
 
     try {
       const response = await fetch("/api/contact", {
@@ -24,59 +28,65 @@ export function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
       });
-      const data = (await response.json()) as { error?: string };
+      const data = (await response.json()) as { errorCode?: string };
 
       if (!response.ok) {
-        throw new Error(data.error ?? "No se pudo enviar el mensaje.");
+        throw new Error(data.errorCode ?? "unknown");
       }
 
       form.reset();
       setStatus("success");
-      setMessage("Mensaje enviado. Gracias por contactar conmigo.");
+      setErrorCode(null);
     } catch (error) {
       setStatus("error");
-      setMessage(error instanceof Error ? error.message : "No se pudo enviar el mensaje.");
+      setErrorCode(error instanceof Error ? error.message : "unknown");
     }
   }
+
+  const message = status === "success"
+    ? copy.success
+    : status === "error"
+      ? (copy.errors[errorCode ?? "unknown"] ?? copy.errors.unknown)
+      : "";
 
   return (
     <form className="contact-form" onSubmit={handleSubmit} noValidate>
       <div className="form-grid">
         <label>
-          Nombre
-          <input name="name" autoComplete="name" required placeholder="Tu nombre" />
+          {copy.labels.name}
+          <input name="name" autoComplete="name" required placeholder={copy.placeholders.name} />
         </label>
         <label>
-          Correo profesional
+          {copy.labels.email}
           <input
             name="email"
             type="email"
             autoComplete="email"
             required
-            placeholder="nombre@empresa.com"
+            placeholder={copy.placeholders.email}
           />
         </label>
       </div>
       <label>
-        Empresa <span>(opcional)</span>
-        <input name="company" autoComplete="organization" placeholder="Nombre de la empresa" />
+        {copy.labels.company} <span>({copy.labels.optional})</span>
+        <input name="company" autoComplete="organization" placeholder={copy.placeholders.company} />
       </label>
       <label className="honeypot" aria-hidden="true">
-        Sitio web
+        {copy.labels.website}
         <input name="website" tabIndex={-1} autoComplete="off" />
       </label>
       <label>
-        Mensaje
+        {copy.labels.message}
         <textarea
           name="message"
           rows={5}
           required
-          placeholder="Cuéntame cómo puedo ayudarte o sobre qué te gustaría hablar."
+          placeholder={copy.placeholders.message}
         />
       </label>
       <button className="button button-primary form-submit" type="submit" disabled={status === "sending"}>
         {status === "sending" ? <LoaderCircle size={18} className="spin" /> : <Send size={18} />}
-        {status === "sending" ? "Enviando..." : "Enviar mensaje"}
+        {status === "sending" ? copy.sending : copy.send}
       </button>
       {message && (
         <p className={`form-message ${status === "success" ? "is-success" : "is-error"}`} aria-live="polite">

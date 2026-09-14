@@ -24,7 +24,7 @@ export async function POST(request: Request) {
 
     if (!name || !email || !message || !email.includes("@")) {
       return Response.json(
-        { error: "Completa tu nombre, correo y mensaje con datos válidos." },
+        { errorCode: "invalid" },
         { status: 400 },
       );
     }
@@ -32,8 +32,7 @@ export async function POST(request: Request) {
     if (!process.env.RESEND_API_KEY || !process.env.CONTACT_FROM_EMAIL) {
       return Response.json(
         {
-          error:
-            "El formulario aún no está conectado al correo. Escríbeme directamente a gonzalo.pachecoagredano@gmail.com.",
+          errorCode: "notConfigured",
         },
         { status: 503 },
       );
@@ -56,7 +55,7 @@ export async function POST(request: Request) {
 
     if (error) {
       return Response.json(
-        { error: "No se pudo enviar el mensaje. Prueba de nuevo o escríbeme por correo." },
+        { errorCode: "sendFailed" },
         { status: 502 },
       );
     }
@@ -64,7 +63,7 @@ export async function POST(request: Request) {
     return Response.json({ ok: true });
   } catch {
     return Response.json(
-      { error: "No se pudo procesar el formulario. Inténtalo de nuevo más tarde." },
+      { errorCode: "processing" },
       { status: 500 },
     );
   }

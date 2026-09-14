@@ -581,7 +581,7 @@ export function Portfolio() {
         <section className="section projects-section" id="proyectos">
           <div className="section-heading reveal">
             <div className="section-marker" data-section-marker><span>02</span> Proyectos</div>
-            <h2>Algunos de los proyectos que he llevado a cabo en la Universidad y que ahora puedo mostrar:</h2>
+            <h2 className="projects-heading">Algunos proyectos que he realizado en la Universidad y que ahora puedo mostrar:</h2>
           </div>
           <div className="filter-bar reveal" aria-label="Filtrar proyectos">
             {filters.map((item) => (

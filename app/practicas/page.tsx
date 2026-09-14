@@ -17,7 +17,7 @@ import {
 export const metadata: Metadata = {
   title: "Prácticas en NTT DATA | Gonzalo Pacheco",
   description:
-    "Bitácora de las prácticas curriculares de Gonzalo Pacheco Agredano en NTT DATA Spain.",
+    "Píldora de las prácticas curriculares de Gonzalo Pacheco Agredano en NTT DATA Spain.",
 };
 
 const focusAreas = [
@@ -87,7 +87,7 @@ const periodStages = [
 export default function PracticesPage() {
   return (
     <main className="practice-page">
-      <a className="skip-link" href="#bitacora">Ir a la bitácora de prácticas</a>
+      <a className="skip-link" href="#pildora">Ir a la píldora de prácticas</a>
 
       <header className="practice-header">
         <div className="practice-header-inner">
@@ -96,7 +96,7 @@ export default function PracticesPage() {
             <span className="header-signature" aria-hidden="true">GONZALO PACHECO AGREDANO</span>
           </Link>
           <nav className="practice-nav" aria-label="Navegación de prácticas">
-            <a href="#bitacora">Bitácora</a>
+            <a href="#pildora">Píldora</a>
             <Link className="practice-back-link" href="/#trayectoria">
               <ArrowLeft size={16} /> Portfolio
             </Link>
@@ -107,14 +107,14 @@ export default function PracticesPage() {
       <section className="practice-hero" aria-labelledby="practicas-title">
         <div className="practice-hero-copy">
           <p className="eyebrow"><span /> Prácticas curriculares · 2026</p>
-          <h1 id="practicas-title">Una bitácora de prácticas con foco en <em>red y automatización.</em></h1>
+          <h1 id="practicas-title">Una píldora de prácticas con foco en <em>red y automatización.</em></h1>
           <p>
             Este espacio recoge el contexto, los hitos y los aprendizajes que vaya desarrollando
             durante mis prácticas curriculares en NTT DATA Spain.
           </p>
           <div className="practice-hero-actions">
-            <a className="button button-primary" href="#bitacora">
-              Explorar la bitácora <ArrowDownRight size={17} />
+            <a className="button button-primary" href="#pildora">
+              Explorar la píldora <ArrowDownRight size={17} />
             </a>
             <Link className="button button-secondary" href="/#trayectoria">
               Volver al portfolio <ArrowUpRight size={17} />
@@ -145,7 +145,7 @@ export default function PracticesPage() {
         </aside>
       </section>
 
-      <div id="bitacora" className="practice-content">
+      <div id="pildora" className="practice-content">
         <section className="practice-section practice-summary" aria-labelledby="contexto-title">
           <div className="practice-section-heading">
             <p className="section-marker"><span>01</span> Contexto formativo</p>
@@ -161,7 +161,7 @@ export default function PracticesPage() {
                 conecta pruebas, procesos, interfaces, integraciones y calidad de los datos.
               </p>
               <p>
-                Esta bitácora irá recogiendo los hitos del periodo, los aprendizajes técnicos y
+                Esta píldora irá recogiendo los hitos del periodo, los aprendizajes técnicos y
                 las conclusiones que puedan compartirse con contexto profesional.
               </p>
             </article>

@@ -16,9 +16,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Bitácora del TFG | Gonzalo Pacheco",
+  title: "Píldora del TFG | Gonzalo Pacheco",
   description:
-    "Bitácora del Trabajo Fin de Grado de Gonzalo Pacheco Agredano sobre escenarios Cell-Free asistidos por RIS.",
+    "Píldora del Trabajo Fin de Grado de Gonzalo Pacheco Agredano sobre escenarios Cell-Free asistidos por RIS.",
 };
 
 const researchFocus = [
@@ -146,7 +146,7 @@ const bibliography = [
 export default function TfgPage() {
   return (
     <main className="tfg-page">
-      <a className="skip-link" href="#bitacora">Ir a la bitácora del TFG</a>
+      <a className="skip-link" href="#pildora">Ir a la píldora del TFG</a>
 
       <header className="practice-header">
         <div className="practice-header-inner">
@@ -155,7 +155,7 @@ export default function TfgPage() {
             <span className="header-signature" aria-hidden="true">GONZALO PACHECO AGREDANO</span>
           </Link>
           <nav className="practice-nav" aria-label="Navegación del Trabajo Fin de Grado">
-            <a href="#bitacora">Bitácora</a>
+            <a href="#pildora">Píldora</a>
             <a href="#bibliografia">Bibliografía</a>
             <Link className="practice-back-link" href="/#trayectoria">
               <ArrowLeft size={16} /> Portfolio
@@ -169,13 +169,13 @@ export default function TfgPage() {
           <p className="eyebrow"><span /> Trabajo Fin de Grado · 2026-2027</p>
           <h1 id="tfg-title">Cell-Free con superficies <em>RIS.</em></h1>
           <p>
-            Bitácora de un Trabajo Fin de Grado cuyo título definitivo está aún en definición.
+            Píldora de un Trabajo Fin de Grado cuyo título definitivo está aún en definición.
             La línea de investigación parte de escenarios Cell-Free asistidos por RIS como propuesta
             para comunicaciones 6G.
           </p>
           <div className="practice-hero-actions">
-            <a className="button button-primary" href="#bitacora">
-              Explorar la bitácora <ArrowDownRight size={17} />
+            <a className="button button-primary" href="#pildora">
+              Explorar la píldora <ArrowDownRight size={17} />
             </a>
             <a className="button button-secondary" href="#bibliografia">
               Ver bibliografía <BookOpenText size={17} />
@@ -211,10 +211,10 @@ export default function TfgPage() {
         </aside>
       </section>
 
-      <div id="bitacora" className="tfg-content">
+      <div id="pildora" className="tfg-content">
         <section className="tfg-section" aria-labelledby="contexto-title">
           <div className="practice-section-heading">
-            <p className="section-marker"><span>01</span> Bitácora</p>
+            <p className="section-marker"><span>01</span> Píldora</p>
             <h2 id="contexto-title">Antes de simular, hay que <em>entender.</em></h2>
           </div>
           <div className="tfg-intro-layout">
@@ -302,7 +302,7 @@ export default function TfgPage() {
             <h2 id="bibliography-title">Lecturas para construir una <em>base sólida.</em></h2>
           </div>
           <p className="tfg-bibliography-intro">
-            Referencias seleccionadas para la primera fase de investigación. La bitácora irá
+            Referencias seleccionadas para la primera fase de investigación. La píldora irá
             registrando las ideas, supuestos y conexiones que surjan de cada lectura.
           </p>
           <div className="tfg-bibliography-grid">

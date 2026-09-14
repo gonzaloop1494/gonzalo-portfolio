@@ -247,6 +247,8 @@ h1 em, h2 em { color: var(--accent); font-family: Georgia, "Times New Roman", se
 .section-heading h2 { margin: 1.35rem 0 0; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.05; }
 .projects-section .section-heading { max-width: 1180px; }
 .projects-section .projects-heading { max-width: 1140px; font-size: clamp(1.9rem, 2.85vw, 3.15rem); line-height: 1.16; }
+.trajectory-section .section-heading { max-width: 1180px; }
+.trajectory-section .trajectory-heading { max-width: 1140px; font-size: clamp(1.9rem, 2.85vw, 3.15rem); line-height: 1.16; }
 .filter-bar { display: flex; flex-wrap: wrap; gap: .45rem; align-items: center; margin: 3rem 0 1.25rem; }
 .filter-bar button { min-height: 35px; padding: .42rem .75rem; border: 1px solid var(--line); border-radius: 0; background: transparent; color: var(--muted); font-size: .76rem; font-weight: 800; cursor: pointer; }
 .filter-bar button:hover, .filter-bar button.is-active { border-color: var(--accent); background: var(--accent); color: var(--navy-950); }
@@ -562,6 +564,7 @@ h1 em, h2 em { color: var(--accent); font-family: Georgia, "Times New Roman", se
   .profile-interest-list li:last-child { grid-column: auto; }
   .section-heading h2 { font-size: clamp(2.15rem, 11vw, 3.2rem); }
   .projects-section .projects-heading { font-size: clamp(1.75rem, 8vw, 2.1rem); line-height: 1.2; }
+  .trajectory-section .trajectory-heading { font-size: clamp(1.75rem, 8vw, 2.1rem); line-height: 1.2; }
   .filter-bar { margin-top: 2rem; }
   .filter-bar a { width: 100%; margin: .4rem 0 0; }
   .project-grid { grid-template-columns: 1fr; }

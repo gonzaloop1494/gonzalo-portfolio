@@ -689,7 +689,7 @@ export function Portfolio() {
         <section className="section trajectory-section" id="trayectoria">
           <div className="section-heading reveal">
             <div className="section-marker" data-section-marker><span>04</span> Trayectoria</div>
-            <h2>Formación aplicada, con la vista puesta en el <em>siguiente desafío.</em></h2>
+            <h2 className="trajectory-heading">Formación, con la vista puesta en <em>siguientes desafíos.</em></h2>
           </div>
           <div className="trajectory-grid">
             <article className="timeline-card reveal">

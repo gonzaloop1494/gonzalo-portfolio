@@ -8,6 +8,7 @@ import {
   BookOpenText,
   BrainCircuit,
   Code2,
+  Download,
   FileText,
   GraduationCap,
   Network,
@@ -82,6 +83,7 @@ const bibliography = [
     description:
       "Primera toma de contacto con escenarios Cell-Free asistidos por RIS y con la selección RIS-MS en bandas FR1 y FR3.",
     status: "Lectura inicial",
+    pdfHref: "/tfg/bibliografia/ris-assisted-cell-free-ris-ms-selection-fr1-fr3.pdf",
   },
   {
     type: "Memoria TFG",
@@ -90,6 +92,7 @@ const bibliography = [
     description:
       "Primera memoria de referencia para consolidar una base sobre escenarios Cell-Free, bandas de frecuencia y asistencia RIS.",
     status: "Base de conocimiento",
+    pdfHref: "/tfg/bibliografia/memoria-sandra-arana-cell-free-ris.pdf",
   },
   {
     type: "Memoria TFG",
@@ -98,6 +101,7 @@ const bibliography = [
     description:
       "Referencia para comprender aproximaciones de asignación RIS en entornos 6G Cell-Free y contrastar decisiones de modelado.",
     status: "Referencia de algoritmo",
+    pdfHref: "/tfg/bibliografia/memoria-uriel-garcia-asignacion-ris.pdf",
   },
   {
     type: "Memoria TFG",
@@ -106,6 +110,7 @@ const bibliography = [
     description:
       "Memoria centrada en estimación de canal y agrupación de elementos RIS, especialmente relevante para la granularidad del modelo.",
     status: "Referencia de canal",
+    pdfHref: "/tfg/bibliografia/memoria-fernando-galindo-estimacion-canal.pdf",
   },
   {
     type: "Libro",
@@ -114,6 +119,8 @@ const bibliography = [
     description:
       "Fundamento teórico principal para el enfoque User-Centric Cell-Free Massive MIMO y para el lenguaje de los modelos y métricas.",
     status: "Lectura completa",
+    pdfHref: "/tfg/bibliografia/foundations-user-centric-cell-free-massive-mimo.pdf",
+    codeHref: "/tfg/codigo/user-centric-cell-free-massive-mimo-matlab.zip",
   },
   {
     type: "Libro",
@@ -122,6 +129,8 @@ const bibliography = [
     description:
       "Referencia sobre comunicaciones multiantena y superficies reconfigurables; el capítulo 9 concentra el estudio específico de RIS.",
     status: "Capítulo 9",
+    pdfHref: "/tfg/bibliografia/introduction-multiple-antenna-ris.pdf",
+    codeHref: "/tfg/codigo/multiple-antenna-ris-matlab.zip",
   },
   {
     type: "Paper IEEE",
@@ -130,6 +139,7 @@ const bibliography = [
     description:
       "Artículo que inspira el estudio de control por elemento RIS, estimación de canal, configuraciones de corto y largo plazo y eficiencia espectral.",
     status: "Marco metodológico",
+    pdfHref: "/tfg/bibliografia/channel-estimation-phase-shifts-ris-massive-mimo.pdf",
   },
 ];
 
@@ -296,7 +306,7 @@ export default function TfgPage() {
             registrando las ideas, supuestos y conexiones que surjan de cada lectura.
           </p>
           <div className="tfg-bibliography-grid">
-            {bibliography.map(({ type, title, authors, description, status }, index) => (
+            {bibliography.map(({ type, title, authors, description, status, pdfHref, codeHref }, index) => (
               <article className="tfg-reference-card" key={title}>
                 <div className="tfg-reference-meta">
                   <span>0{index + 1}</span>
@@ -305,7 +315,30 @@ export default function TfgPage() {
                 <h3>{title}</h3>
                 <p className="tfg-reference-authors">{authors}</p>
                 <p>{description}</p>
-                <span className="tfg-reference-status">{status}</span>
+                <div className="tfg-reference-footer">
+                  <div className="tfg-reference-actions">
+                    <a
+                      className="tfg-reference-action"
+                      href={pdfHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Abrir el PDF de ${title}`}
+                    >
+                      Abrir PDF <FileText size={14} aria-hidden="true" />
+                    </a>
+                    {codeHref ? (
+                      <a
+                        className="tfg-reference-action"
+                        href={codeHref}
+                        download
+                        aria-label={`Descargar el código MATLAB de ${title}`}
+                      >
+                        Código MATLAB <Download size={14} aria-hidden="true" />
+                      </a>
+                    ) : null}
+                  </div>
+                  <span className="tfg-reference-status">{status}</span>
+                </div>
               </article>
             ))}
           </div>

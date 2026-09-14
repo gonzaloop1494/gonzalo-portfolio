@@ -532,7 +532,12 @@ h1 em, h2 em { color: var(--accent); font-family: Georgia, "Times New Roman", se
 .tfg-reference-card h3 { margin: 2rem 0 .8rem; font-size: 1.2rem; line-height: 1.18; }
 .tfg-reference-card > p { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.62; }
 .tfg-reference-card .tfg-reference-authors { margin-bottom: 1rem; color: var(--soft); font-size: .78rem; font-weight: 700; line-height: 1.5; }
-.tfg-reference-status { display: inline-flex; align-items: center; width: fit-content; margin-top: auto; padding-top: 1.5rem; color: var(--accent); font-size: .74rem; font-weight: 800; }
+.tfg-reference-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .85rem; margin-top: auto; padding-top: 1.5rem; }
+.tfg-reference-actions { display: flex; flex-wrap: wrap; gap: .55rem; }
+.tfg-reference-action { display: inline-flex; align-items: center; gap: .38rem; min-height: 2.15rem; padding: .42rem .62rem; border: 1px solid var(--line); color: var(--accent); font-size: .7rem; font-weight: 800; line-height: 1.1; }
+.tfg-reference-action:hover { border-color: var(--accent); background: var(--accent); color: var(--navy-950); }
+.tfg-reference-action:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.tfg-reference-status { display: inline-flex; flex: 0 0 auto; align-items: center; margin-left: auto; color: var(--accent); font-size: .74rem; font-weight: 800; text-align: right; }
 
 .reveal { opacity: 1; transform: none; }
 
@@ -626,6 +631,8 @@ h1 em, h2 em { color: var(--accent); font-family: Georgia, "Times New Roman", se
   .tfg-stat-list > div { grid-template-columns: 1fr; gap: .35rem; }
   .tfg-stat-list dd { text-align: left; }
   .tfg-focus-grid, .tfg-bibliography-grid { grid-template-columns: 1fr; }
+  .tfg-reference-footer { align-items: flex-start; flex-direction: column-reverse; }
+  .tfg-reference-status { margin-left: 0; text-align: left; }
   .practice-footer { flex-direction: column; align-items: flex-start; }
 }
 

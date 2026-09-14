@@ -945,7 +945,7 @@ export function Portfolio() {
             <Link
               className="timeline-card timeline-card-tfg reveal"
               href="/tfg"
-              aria-label="Abrir la bitácora del Trabajo Fin de Grado"
+              aria-label="Abrir la píldora del Trabajo Fin de Grado"
             >
               <div className="tfg-image-frame">
                 <Image
@@ -961,14 +961,14 @@ export function Portfolio() {
                 <p className="timeline-date">En fase de definición</p>
                 <h3>Trabajo Fin de Grado</h3>
                 <p>Explora la línea de investigación, las lecturas de partida y la hoja de ruta del proyecto.</p>
-                <p className="timeline-note">Una bitácora para documentar el desarrollo con contexto técnico.</p>
-                <span className="timeline-card-cta">Abrir bitácora del TFG <ArrowUpRight size={15} /></span>
+                <p className="timeline-note">Una píldora para documentar el desarrollo con contexto técnico.</p>
+                <span className="timeline-card-cta">Abrir píldora del TFG <ArrowUpRight size={15} /></span>
               </div>
             </Link>
             <Link
               className="timeline-card timeline-card-ntt reveal"
               href="/practicas"
-              aria-label="Abrir la bitácora de prácticas curriculares en NTT DATA"
+              aria-label="Abrir la píldora de prácticas curriculares en NTT DATA"
             >
               <div className="ntt-card-image-frame">
                 <Image
@@ -984,7 +984,7 @@ export function Portfolio() {
                 <p className="timeline-date">Prácticas curriculares</p>
                 <h3>NTT DATA Spain</h3>
                 <p>Validación de soluciones de red fija e hiperautomatización, con atención a procesos, integraciones y datos de provisión.</p>
-                <span className="timeline-card-cta">Ver bitácora de prácticas <ArrowUpRight size={15} /></span>
+                <span className="timeline-card-cta">Ver píldora de prácticas <ArrowUpRight size={15} /></span>
               </div>
             </Link>
           </div>

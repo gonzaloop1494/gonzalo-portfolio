@@ -2,18 +2,17 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
+  ArrowDownRight,
   ArrowLeft,
   ArrowUpRight,
   CalendarDays,
+  CheckCircle2,
   Clock3,
-  ExternalLink,
   FileText,
   Network,
   Route,
   Workflow,
 } from "lucide-react";
-
-const universityPracticeUrl = "https://servicios.urjc.es/practicas/public/practica/257931";
 
 export const metadata: Metadata = {
   title: "Prácticas en NTT DATA | Gonzalo Pacheco",
@@ -67,6 +66,24 @@ const timeline = [
   },
 ];
 
+const periodStages = [
+  {
+    icon: FileText,
+    label: "Preparación",
+    detail: "Septiembre",
+  },
+  {
+    icon: Workflow,
+    label: "Desarrollo",
+    detail: "Octubre - noviembre",
+  },
+  {
+    icon: CheckCircle2,
+    label: "Cierre",
+    detail: "Diciembre",
+  },
+];
+
 export default function PracticesPage() {
   return (
     <main className="practice-page">
@@ -79,9 +96,7 @@ export default function PracticesPage() {
             <span className="header-signature" aria-hidden="true">GONZALO PACHECO AGREDANO</span>
           </Link>
           <nav className="practice-nav" aria-label="Navegación de prácticas">
-            <a href={universityPracticeUrl} target="_blank" rel="noreferrer">
-              Ficha URJC <ExternalLink size={15} />
-            </a>
+            <a href="#bitacora">Bitácora</a>
             <Link className="practice-back-link" href="/#trayectoria">
               <ArrowLeft size={16} /> Portfolio
             </Link>
@@ -98,8 +113,8 @@ export default function PracticesPage() {
             durante mis prácticas curriculares en NTT DATA Spain.
           </p>
           <div className="practice-hero-actions">
-            <a className="button button-primary" href={universityPracticeUrl} target="_blank" rel="noreferrer">
-              Ver ficha de prácticas URJC <ExternalLink size={17} />
+            <a className="button button-primary" href="#bitacora">
+              Explorar la bitácora <ArrowDownRight size={17} />
             </a>
             <Link className="button button-secondary" href="/#trayectoria">
               Volver al portfolio <ArrowUpRight size={17} />
@@ -183,16 +198,24 @@ export default function PracticesPage() {
                 </li>
               ))}
             </ol>
-            <aside className="practice-university-card">
-              <FileText size={25} strokeWidth={1.5} aria-hidden="true" />
+            <aside className="practice-university-card practice-period-card">
+              <CalendarDays size={25} strokeWidth={1.5} aria-hidden="true" />
               <p className="practice-entry-label">Universidad Rey Juan Carlos</p>
-              <h3>Ficha pública de prácticas externas</h3>
+              <h3>Periodo de prácticas curriculares</h3>
               <p>
-                Consulta la ficha técnica pública del periodo de prácticas en el portal de la URJC.
+                Un recorrido formativo centrado en red fija, automatización y calidad de los datos.
               </p>
-              <a href={universityPracticeUrl} target="_blank" rel="noreferrer">
-                Abrir ficha de prácticas <ExternalLink size={16} />
-              </a>
+              <ol className="practice-period-stages" aria-label="Fases del periodo de prácticas">
+                {periodStages.map(({ icon: Icon, label, detail }) => (
+                  <li key={label}>
+                    <Icon size={17} strokeWidth={1.6} aria-hidden="true" />
+                    <div>
+                      <strong>{label}</strong>
+                      <span>{detail}</span>
+                    </div>
+                  </li>
+                ))}
+              </ol>
             </aside>
           </div>
         </section>

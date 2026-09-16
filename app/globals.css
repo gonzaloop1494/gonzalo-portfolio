@@ -276,13 +276,13 @@ h1 em, h2 em { color: var(--accent); font-family: Georgia, "Times New Roman", se
 .project-actions { display: grid; gap: .8rem; }
 .project-link { display: inline-flex; align-items: center; gap: .35rem; width: fit-content; color: var(--accent); font-size: .8rem; font-weight: 800; }
 .project-link:hover { color: var(--accent-strong); }
-.project-video-links { display: grid; gap: .45rem; }
-.project-video-button { display: inline-flex; align-items: center; gap: .45rem; min-height: 2.35rem; padding: .45rem .55rem; border: 1px solid var(--line); color: var(--soft); font-size: .72rem; font-weight: 800; line-height: 1.25; text-decoration: none; transition: border-color .2s ease, background-color .2s ease, color .2s ease; }
-.project-video-button span { min-width: 0; overflow-wrap: anywhere; }
-.project-video-button svg:first-child { flex: 0 0 auto; color: var(--accent); }
-.project-video-button svg:last-child { flex: 0 0 auto; margin-left: auto; }
-.project-video-button:hover { border-color: rgba(98, 223, 210, .7); background: rgba(98, 223, 210, .08); color: var(--text); }
-.project-video-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.project-resource-links { display: grid; gap: .45rem; }
+.project-resource-button { display: inline-flex; align-items: center; gap: .45rem; min-height: 2.35rem; padding: .45rem .55rem; border: 1px solid var(--line); color: var(--soft); font-size: .72rem; font-weight: 800; line-height: 1.25; text-decoration: none; transition: border-color .2s ease, background-color .2s ease, color .2s ease; }
+.project-resource-button span { min-width: 0; overflow-wrap: anywhere; }
+.project-resource-button svg:first-child { flex: 0 0 auto; color: var(--accent); }
+.project-resource-button svg:last-child { flex: 0 0 auto; margin-left: auto; }
+.project-resource-button:hover { border-color: rgba(98, 223, 210, .7); background: rgba(98, 223, 210, .08); color: var(--text); }
+.project-resource-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
 .skills-section { max-width: none; padding: 0 0 clamp(5rem, 10vw, 8rem); background: var(--navy-950); }
 .skills-intro { border-top: 1px solid var(--line); background: var(--navy-950); }

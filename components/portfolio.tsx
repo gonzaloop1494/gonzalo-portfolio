@@ -12,6 +12,7 @@ import {
   CircleCheck,
   Code2,
   ExternalLink,
+  FileText,
   Github,
   GitFork,
   GraduationCap,
@@ -53,6 +54,7 @@ type ProjectDefinition = {
   icon: LucideIcon;
   image: string;
   videos?: Record<GameRankVideoId, string>;
+  poster?: string;
 };
 
 const projectDefinitions: ProjectDefinition[] = [
@@ -95,6 +97,7 @@ const projectDefinitions: ProjectDefinition[] = [
     href: "https://github.com/gonzaloop1494/energy-as-a-service-madrid",
     icon: BriefcaseBusiness,
     image: "/project-energy-as-a-service.png",
+    poster: "/energy-as-a-service-poster.pdf",
   },
 ];
 
@@ -642,10 +645,10 @@ export function Portfolio() {
                         {copy.projects.repository} <ArrowUpRight size={18} aria-hidden="true" />
                       </a>
                       {videos && (
-                        <div className="project-video-links">
+                        <div className="project-resource-links">
                           {gameRankVideoIds.map((videoId) => (
                             <a
-                              className="project-video-button"
+                              className="project-resource-button"
                               href={videos[videoId]}
                               key={videoId}
                               target="_blank"
@@ -657,6 +660,13 @@ export function Portfolio() {
                             </a>
                           ))}
                         </div>
+                      )}
+                      {project.poster && (
+                        <a className="project-resource-button" href={project.poster} target="_blank" rel="noreferrer">
+                          <FileText size={16} aria-hidden="true" />
+                          <span>{copy.projects.poster}</span>
+                          <ArrowUpRight size={15} aria-hidden="true" />
+                        </a>
                       )}
                     </div>
                   </div>

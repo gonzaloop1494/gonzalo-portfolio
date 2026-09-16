@@ -82,6 +82,7 @@ type PortfolioCopy = {
       required: string;
       optional: string;
     };
+    poster: string;
     cards: ProjectCopy[];
   };
   skills: {
@@ -250,6 +251,7 @@ export const portfolioCopy: Record<Locale, PortfolioCopy> = {
         required: "Ver vídeo: parte obligatoria",
         optional: "Ver vídeo: parte voluntaria",
       },
+      poster: "Ver póster del proyecto",
       cards: [
         {
           title: "Simulación TDMA",
@@ -541,6 +543,7 @@ export const portfolioCopy: Record<Locale, PortfolioCopy> = {
         required: "Watch the required-part video",
         optional: "Watch the optional-part video",
       },
+      poster: "View project poster",
       cards: [
         {
           title: "TDMA Simulation",
@@ -832,6 +835,7 @@ export const portfolioCopy: Record<Locale, PortfolioCopy> = {
         required: "Voir la vidéo de la partie obligatoire",
         optional: "Voir la vidéo de la partie facultative",
       },
+      poster: "Voir le poster du projet",
       cards: [
         {
           title: "Simulation TDMA",
@@ -1123,6 +1127,7 @@ export const portfolioCopy: Record<Locale, PortfolioCopy> = {
         required: "Video zum Pflichtteil ansehen",
         optional: "Video zum freiwilligen Teil ansehen",
       },
+      poster: "Projektposter ansehen",
       cards: [
         {
           title: "TDMA-Simulation",

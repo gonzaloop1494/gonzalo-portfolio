@@ -78,6 +78,10 @@ type PortfolioCopy = {
     fullGithub: string;
     technologiesPrefix: string;
     repository: string;
+    videos: {
+      required: string;
+      optional: string;
+    };
     cards: ProjectCopy[];
   };
   skills: {
@@ -242,6 +246,10 @@ export const portfolioCopy: Record<Locale, PortfolioCopy> = {
       fullGithub: "GitHub completo",
       technologiesPrefix: "Tecnologías de",
       repository: "Ver repositorio",
+      videos: {
+        required: "Ver vídeo: parte obligatoria",
+        optional: "Ver vídeo: parte voluntaria",
+      },
       cards: [
         {
           title: "Simulación TDMA",
@@ -529,6 +537,10 @@ export const portfolioCopy: Record<Locale, PortfolioCopy> = {
       fullGithub: "Full GitHub profile",
       technologiesPrefix: "Technologies used in",
       repository: "View repository",
+      videos: {
+        required: "Watch the required-part video",
+        optional: "Watch the optional-part video",
+      },
       cards: [
         {
           title: "TDMA Simulation",
@@ -816,6 +828,10 @@ export const portfolioCopy: Record<Locale, PortfolioCopy> = {
       fullGithub: "Profil GitHub complet",
       technologiesPrefix: "Technologies de",
       repository: "Voir le dépôt",
+      videos: {
+        required: "Voir la vidéo de la partie obligatoire",
+        optional: "Voir la vidéo de la partie facultative",
+      },
       cards: [
         {
           title: "Simulation TDMA",
@@ -1103,6 +1119,10 @@ export const portfolioCopy: Record<Locale, PortfolioCopy> = {
       fullGithub: "Gesamtes GitHub-Profil",
       technologiesPrefix: "Technologien für",
       repository: "Repository ansehen",
+      videos: {
+        required: "Video zum Pflichtteil ansehen",
+        optional: "Video zum freiwilligen Teil ansehen",
+      },
       cards: [
         {
           title: "TDMA-Simulation",

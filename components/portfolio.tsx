@@ -25,6 +25,7 @@ import {
   Radio,
   Satellite,
   X,
+  Youtube,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import Image from "next/image";
@@ -44,8 +45,17 @@ const cvFile = "/cv-gonzalo-pacheco-agredano.pdf";
 
 const navigationIds = ["perfil", "proyectos", "trayectoria", "certificaciones", "contacto"] as const;
 const projectFilterIds: ProjectFilter[] = ["all", "telecom", "software", "data"];
+const gameRankVideoIds = ["required", "optional"] as const;
+type GameRankVideoId = (typeof gameRankVideoIds)[number];
+type ProjectDefinition = {
+  type: ProjectFilter;
+  href: string;
+  icon: LucideIcon;
+  image: string;
+  videos?: Record<GameRankVideoId, string>;
+};
 
-const projectDefinitions = [
+const projectDefinitions: ProjectDefinition[] = [
   {
     type: "telecom",
     href: "https://github.com/gonzaloop1494/tdma-network-simulation",
@@ -57,6 +67,10 @@ const projectDefinitions = [
     href: "https://github.com/gonzaloop1494/gamerank-django",
     icon: Code2,
     image: "/project-gamerank.png",
+    videos: {
+      required: "https://www.youtube.com/watch?v=XPUFbTxNHzo",
+      optional: "https://www.youtube.com/watch?v=2PUCQ10D3Gk",
+    },
   },
   {
     type: "software",
@@ -82,7 +96,7 @@ const projectDefinitions = [
     icon: BriefcaseBusiness,
     image: "/project-energy-as-a-service.png",
   },
-] satisfies Array<{ type: ProjectFilter; href: string; icon: LucideIcon; image: string }>;
+];
 
 const skillDefinitions = [
   { icon: Radio, image: "/skills-telecom.png" },
@@ -622,9 +636,28 @@ export function Portfolio() {
                     <ul className="tag-list" aria-label={copy.projects.technologiesPrefix + " " + projectCopy.title}>
                       {projectCopy.tags.map((tag) => <li key={tag}>{tag}</li>)}
                     </ul>
-                    <a className="project-link" href={project.href} target="_blank" rel="noreferrer">
-                      {copy.projects.repository} <ArrowUpRight size={18} />
-                    </a>
+                    <div className="project-actions">
+                      <a className="project-link" href={project.href} target="_blank" rel="noreferrer">
+                        {copy.projects.repository} <ArrowUpRight size={18} aria-hidden="true" />
+                      </a>
+                      {project.videos && (
+                        <div className="project-video-links">
+                          {gameRankVideoIds.map((videoId) => (
+                            <a
+                              className="project-video-button"
+                              href={project.videos[videoId]}
+                              key={videoId}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              <Youtube size={16} aria-hidden="true" />
+                              <span>{copy.projects.videos[videoId]}</span>
+                              <ArrowUpRight size={15} aria-hidden="true" />
+                            </a>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </article>
               );

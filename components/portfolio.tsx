@@ -615,6 +615,7 @@ export function Portfolio() {
               const project = projectDefinitions[projectIndex];
               const projectCopy = copy.projects.cards[projectIndex];
               const Icon = project.icon;
+              const videos = project.videos;
               return (
                 <article className="project-card reveal" key={project.href} style={{ animationDelay: visibleIndex * 45 + "ms" }}>
                   <div className="project-media">
@@ -640,12 +641,12 @@ export function Portfolio() {
                       <a className="project-link" href={project.href} target="_blank" rel="noreferrer">
                         {copy.projects.repository} <ArrowUpRight size={18} aria-hidden="true" />
                       </a>
-                      {project.videos && (
+                      {videos && (
                         <div className="project-video-links">
                           {gameRankVideoIds.map((videoId) => (
                             <a
                               className="project-video-button"
-                              href={project.videos[videoId]}
+                              href={videos[videoId]}
                               key={videoId}
                               target="_blank"
                               rel="noreferrer"
